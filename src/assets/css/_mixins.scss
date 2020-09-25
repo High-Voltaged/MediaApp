@@ -1,0 +1,23 @@
+// BASE
+
+
+// TYPOGRAPHY STYLING
+
+@mixin typography($size, $weight) {
+   font-size: $size;
+   font-weight: $weight;
+   line-height: $size * 1.5;
+}
+
+
+// OTHER
+
+@mixin background-card($index, $side, $opacity) {
+   width: calc(100% - 2 * #{$side});
+   left: $side;
+   right: $side;
+   bottom: calc(-1 * #{$index} * 8px);
+
+   opacity: $opacity;
+   z-index: calc(5 - #{$index});
+}

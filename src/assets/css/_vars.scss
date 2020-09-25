@@ -1,0 +1,52 @@
+// BASE COLORS
+
+:root {
+
+   --color-white-1: 255, 255, 255; 
+   --color-white-2: 226, 232, 240;
+
+   --color-gray-1: 28, 30, 33; // primary #1c1e21
+   --color-gray-2: 47, 49, 54; // tertiary 
+   --color-gray-3: 30, 32, 35; // contrast
+   --color-gray-4: 35, 37, 41; // new
+   
+   --color-gray-light: 44, 46, 51;
+   
+   --color-purple-1: 147, 112, 219; // purple-primary #9370DB
+   
+   --color-gray-dark: 24, 25, 28; // secondary
+}
+
+
+// BASE SIZES
+
+
+:root {
+
+   --sidebar-width: 15rem;
+   --main-util-width: 65%;
+   --secondary-util-width: 35%;
+
+   --navbar-util-height: 3rem;
+   --message-card-height: 6.25rem;
+   --community-card-height: 4.8rem;
+
+   // secondary
+
+   --dropdown-width: 450px;
+   --dropdown-height: 150px;
+   --dropdown-content-height: calc(var(--card-sm-height) + var(--card-lg-height) + 30px);
+   --card-sm-height: 33px;
+   --card-lg-height: 56px;
+
+}
+
+// OTHER
+
+:root {
+
+   --avatar-shadow: 0px 2px 10px 0px rgba(0, 0, 0, .2);
+   --card-shadow: 0 0 20px 0 rgba(0, 0, 0, .4);
+   --card-shadow-hover: 0 0 12px 0 rgba(0, 0, 0, .3);
+
+}

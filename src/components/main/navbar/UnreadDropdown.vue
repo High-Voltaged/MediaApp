@@ -1,0 +1,83 @@
+<template>
+   
+   <div class="navbar-util__dropdown absolute right-0 -bottom-2 flex flex-col items-center px-2 py-3 oveflow-hidden">
+
+      <Tabs></Tabs>
+
+      <div v-if="!cards.length" class="navbar-util__dropdown__default p-3">
+
+         <div>
+            {{ tabs[currentTab].default }}
+         </div>
+
+      </div>
+
+      <div v-else class="navbar-util__dropdown__content flex-auto flex flex-col items-center w-full p-2 space-y-4 overflow-y-auto overflow-x-hidden">
+
+         <UnreadCard
+            v-for="card in cards"
+            :key="card.id"
+            :card="card"
+         ></UnreadCard>
+
+      </div>
+
+   </div>
+
+</template>
+
+<script lang="ts">
+
+   import { Component, Prop, Vue, InjectReactive } from "nuxt-property-decorator";
+   import Tabs from './Tabs.vue';
+   import UnreadCard from './UnreadCard.vue';
+   import { vxm } from '../../../store'; 
+   
+   @Component({
+      name: 'UnreadDropdown',
+      components: {
+         Tabs,
+         UnreadCard,
+      }
+   })
+   export default class UnreadDropdown extends Vue {
+
+      get cards() {
+
+         switch(this.currentTab) {
+
+            case 0: 
+               return this.comments;
+               break;
+            
+            case 1: 
+               return this.mentions;
+               break;
+            
+            default:
+               return this.comments;
+               break;
+
+         }
+
+      }
+
+      get comments() {
+         return vxm.messages.getComments;
+      }
+
+      get mentions() {
+         return vxm.messages.getMentions;
+      }
+
+      get currentTab() {
+         return vxm.messages.getCurrUnreadTab;
+      }
+
+      get tabs() {
+         return vxm.messages.getUnreadTabs;
+      }
+
+   } 
+
+</script>
