@@ -54,13 +54,13 @@ export function createRouter() {
                   },
                },
 
-               // {
-               //    name: 'community/:id',
-               //    path: 'communities/community/:id',
-               //    components: {
-               //       community: CommunityPage,
-               //    },
-               // },
+               {
+                  name: 'community/:id',
+                  path: 'communities/community/:id',
+                  components: {
+                     community: CommunityPage,
+                  },
+               },
 
                {
                   name: 'news',

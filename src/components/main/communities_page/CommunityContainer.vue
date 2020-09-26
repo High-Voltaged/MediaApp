@@ -29,6 +29,7 @@
             v-for="card in communities"
             :key="card.id"
             :card="card"
+            @click="setCmnPage(card.id)"
             :class="{ 'mt-6': (communities.indexOf(card) != 0) }"
          ></CommunityCard>
 
@@ -106,12 +107,12 @@
 
       }
 
-      // setCmnPage(id: number) {
+      setCmnPage(id: number) {
 
-      //    vxm.communities.setCommunityPage(id);
-      //    this.$router.replace({ path: `communities/community/${id}` });
+         vxm.communities.setCommunityPage(id);
+         this.$router.replace({ path: `communities/community/${id}` });
 
-      // }
+      }
 
    // Lifecycle Hooks 
 

@@ -1,6 +1,6 @@
 <template>
    
-   <div class="container-util flex-auto flex flex-col items-start relative px-8 pt-8">
+   <div class="container-util flex-auto flex flex-col items-start relative px-8 pt-4">
 
       <Navbar />
 
@@ -70,6 +70,12 @@
          let tab: Path = path.slice(1) as Path;
          
          if(path.includes(tab)) {
+
+            if(path.includes('communities') && (path != '/communities')) {
+
+               tab = 'communities';
+
+            }
 
             let id: number = this.tabs.find(t => {
 
