@@ -3,6 +3,70 @@
 @import '_mixins';
 
 
+// COMMUNITYPAGE -- CommunityPage
+
+
+.page__community {
+
+   > .sub {
+      width: 65%; 
+   }
+
+   &__header {
+      height: 14rem;
+
+      border: 1px solid rgba(var(--color-white-2), .5);
+      
+      .header-content {
+         width: calc(100% - 3rem);
+         height: 13rem;
+
+         background-color: rgba(var(--color-gray-2), 1);
+         border-radius: 25px;
+      }
+   }
+
+   &__posts {
+
+      border: 1px solid rgba(var(--color-white-2), .5);
+   }
+   
+   &__info {
+      width: 35%;
+
+      border: 1px solid rgba(var(--color-white-2), .5);
+      
+      .info-section {
+         height: auto;
+
+         background-color: rgba(var(--color-gray-2), 1);
+         border-radius: 20px;
+         
+         &__header > span {
+            color: rgba(var(--color-white-2), .8);
+            @include typography(14.5px, 600);
+         }
+
+         &__info > p{
+            color: rgba(var(--color-white-2), 1);
+            @include typography(13px, 500);
+         }
+
+         &__followers span {
+            color: rgba(var(--color-white-2), 1);
+            @include typography(12px, 600);
+         }
+
+         &__username > span {
+            color: rgba(var(--color-white-2), 1);
+            @include typography(14px, 500);
+         }
+      }
+   }
+   
+}
+
+
 // SUGGESTED CONTAINER -- MessagesPage
 
 
@@ -330,6 +394,16 @@ input, textarea  {
    &:hover, &:focus, &:active {
       -webkit-box-shadow: var(--avatar-shadow) !important;
       box-shadow: var(--avatar-shadow) !important;
+   }
+}
+
+.info-section {
+   .vs-avatar {
+      background: rgba(var(--color-gray-3), 1) !important;
+      box-shadow: none !important;
+   }
+   .vs-avatar-content {
+      background: rgba(var(--color-gray-3), 1) !important;
    }
 }
 
