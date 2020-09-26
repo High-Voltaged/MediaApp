@@ -1,4 +1,4 @@
-# streamingwebsitevue
+# media_app
 
 > Nuxt.js TypeScript project
 
