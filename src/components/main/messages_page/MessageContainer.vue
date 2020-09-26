@@ -70,28 +70,23 @@
 
             case 0: 
                return vxm.messages.getMsgs;
-               break;
 
             case 1: {
                
                return vxm.messages.getMsgs.filter(card => {
                   return (card.msg_num > 0);
                })
-               break;
 
             };
 
             case 2: 
                return 0;
-               break; 
 
             case 3: 
                return 0;
-               break;
 
             default: 
                return 0; // --- add default here
-               break;
 
          }
          

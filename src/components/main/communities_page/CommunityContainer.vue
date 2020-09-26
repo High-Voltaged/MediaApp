@@ -64,13 +64,11 @@
    
                case 0:  
                   return vxm.communities.getCommunities;
-                  break;
    
                case 1: 
                   return vxm.communities.getCommunities.filter(c => {
                      return (c.managed);
                   });
-                  break;
             }
 
          } else {
@@ -107,7 +105,6 @@
          vxm.communities.setCmnTab(id);
 
       }
-
 
       // setCmnPage(id: number) {
 
