@@ -55,6 +55,12 @@
 
       }
 
+      get currentTab() {
+
+         return vxm.root.getCurrentTab.id;
+
+      }
+
       @Watch('$route')
       routeConfig() {
 
@@ -71,7 +77,11 @@
 
             }).id;
 
-            vxm.root.setTab(id);
+            if(this.currentTab != id) {
+
+               vxm.root.setTab(id);
+
+            }
 
          }
 
