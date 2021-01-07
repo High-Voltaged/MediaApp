@@ -38,6 +38,7 @@ module.exports = {
     plugins: [
         '~/plugins/fontawesome.js',
         '~/plugins/vuesax.js',
+        '~/plugins/route_config.ts',
     ],
 
     axios: {},

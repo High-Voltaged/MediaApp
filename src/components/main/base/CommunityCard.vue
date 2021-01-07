@@ -1,6 +1,6 @@
 <template>
    
-   <div @click="$emit('click')" class="community-card flex items-center relative w-full py-4 px-6 space-x-5 cursor-pointer">
+   <router-link :to="{ path: `communities/community/${card.id}` }" tag="div" class="community-card flex items-center relative w-full py-4 px-6 space-x-5 cursor-pointer">
 
       <div class="community-card__avatar flex-0">
 
@@ -10,7 +10,7 @@
 
       </div>
 
-      <div class="community-card__content flex-auto flex flex-col items-start space-y-1">
+      <div @click="$emit('click')" class="community-card__content flex-auto flex flex-col items-start space-y-1">
 
          <div 
             :class="!isCmnParent ? ['flex-col', 'items-start', 'space-y-1'] : ['items-center', 'space-x-2']" 
@@ -84,7 +84,7 @@
 
       </div> -->
 
-   </div>
+   </router-link>
 
 </template>
 

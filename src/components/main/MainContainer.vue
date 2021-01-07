@@ -13,6 +13,7 @@
 <script lang="ts">
 
    import { Component, Prop, Vue, Watch } from "nuxt-property-decorator";
+   import { Route } from 'vue-router';
    import Navbar from './navbar/Navbar.vue';
    import { vxm } from '../../store'; 
    
@@ -26,22 +27,22 @@
 
       get tab() {
 
-         let tab = vxm.root.getCurrentTab;
+         if(this.currentCmnId) {
 
-         if(this.cmnPage.id) {
-
-            tab = this.cmnPage;
-            return tab;
+            return { 
+               id: this.currentCmnId, 
+               page: 'community' 
+            };
 
          } else {
 
-            return tab;;
+            return vxm.root.getCurrentTab;;
 
          }
 
       }
 
-      get cmnPage() {
+      get currentCmnId() {
 
          return vxm.communities.getCurrentCmn; 
 
@@ -49,47 +50,13 @@
 
       get tabs() {
 
-         let tabs = [...vxm.root.getSections[0].tabs, ...vxm.root.getSections[1].tabs]; 
-
-         return tabs;
+         return vxm.root.getTabs;
 
       }
 
       get currentTab() {
 
          return vxm.root.getCurrentTab.id;
-
-      }
-
-      @Watch('$route')
-      routeConfig() {
-
-         type Path = 'communities' | 'messages' | 'profile' | 'settings';
-
-         let path: string = this.$route.path;
-         let tab: Path = path.slice(1) as Path;
-         
-         if(path.includes(tab)) {
-
-            if(path.includes('communities') && (path != '/communities')) {
-
-               tab = 'communities';
-
-            }
-
-            let id: number = this.tabs.find(t => {
-
-               return (tab == t.label);
-
-            }).id;
-
-            if(this.currentTab != id) {
-
-               vxm.root.setTab(id);
-
-            }
-
-         }
 
       }
 

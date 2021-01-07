@@ -1,6 +1,6 @@
 <template>
    
-   <div class="navbar-util flex-0 flex items-center absolute inset-x-8 top-8 px-8">
+   <div class="navbar-util flex-0 flex items-center absolute inset-x-8 top-4 px-8">
 
       <div class="w-2/3 flex items-center h-full">
 

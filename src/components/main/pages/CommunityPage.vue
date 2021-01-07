@@ -34,7 +34,11 @@
    })
    export default class CommunityPage extends Vue {
 
-   
+      beforeDestroy() {
+
+         vxm.communities.setCommunityPage(null);
+
+      }
 
    } 
 

@@ -1,6 +1,6 @@
 <template>
 
-   <router-link :to="{ name: tab.label }" class="block w-full">
+   <router-link :to="{ name: tab.label }" tag="div" class="block w-full">
 
       <button @click="$emit('click')" class="sidebar-tab inline-block relative flex items-center w-full px-2 py-1">
 

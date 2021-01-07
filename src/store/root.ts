@@ -6,53 +6,33 @@ const VuexModule = createModule({
    target: 'nuxt',
 })
 
-type Section = {
+type Tab = {
    id: number;
    label: string;
-   tabs: {
-      id: number;
-      label: string;
-      icon: string;
-   }[];
+   g_label: 'profile' | 'global',
+   icon: string;
 } 
 
 export default class Root extends VuexModule {
 
    // Tab Management
 
-   sections: Section[] = [
+   tabs: Tab[] = [
 
-      {
-         id: 0,
-         label: 'Profile',
-         tabs: [
-
-            { id: 0, label: 'profile', icon: 'user' },
-            { id: 1, label: 'settings', icon: 'user-cog' },
-
-         ],
-      },
-
-      {
-         id: 1,
-         label: 'Global',
-         tabs: [
-            
-            { id: 2, label: 'messages', icon: 'envelope' },
-            { id: 3, label: 'communities', icon: 'users' },
-            { id: 4, label: 'news', icon: 'newspaper' },
-
-         ]
-      }
-
+      { id: 0, label: 'profile', g_label: 'profile', icon: 'user' },
+      { id: 1, label: 'settings', g_label: 'profile', icon: 'user-cog' },
+      
+      { id: 2, label: 'messages', g_label: 'global', icon: 'envelope' },
+      { id: 3, label: 'communities', g_label: 'global', icon: 'users' },
+      { id: 4, label: 'news', g_label: 'global', icon: 'newspaper' },
 
    ];
 
    currentTabId: number = null;
    currentTabPage: string = null;
    
-   get getSections() {
-      return this.sections;
+   get getTabs() {
+      return this.tabs;
    }
    
    get getCurrentTab() {
@@ -62,38 +42,15 @@ export default class Root extends VuexModule {
       }
    }
 
-   @mutation setTab(id: number) {
+   @mutation setTab(page_name: string) {
 
-      this.currentTabId = id;
+      this.currentTabPage = page_name;
       
-      let tempPage: string = null;
+      this.currentTabId = this.tabs.find(t => {
 
-      for(let section in this.sections) {
+         return (t.label == page_name);
 
-         let tabs = this.sections[section].tabs;
-
-         for(let tab in tabs) {
-
-            if(tabs[tab].id == id) {
-            
-               tempPage = tabs[tab].label;
-            
-            } else {
-            
-               continue;
-            
-            }
-         }
-
-         if(tempPage) {
-            
-            break;
-         
-         } 
-
-      }
-
-      this.currentTabPage = tempPage;
+      }).id;
 
    } 
 

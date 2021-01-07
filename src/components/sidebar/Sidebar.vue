@@ -16,22 +16,34 @@
 
       <div class="sidebar-content flex flex-col items-center w-full space-y-12">
 
-         <div
-            v-for="section in sections"
-            :key="section.id"
-            class="sidebar-section flex flex-col items-start w-full"
-         >
+         <div class="sidebar-section flex flex-col items-start w-full">
 
             <span class="sidebar-section__text inline-block tracking-wider uppercase">
-               {{ section.label }}
+               Profile
             </span>
 
             <SidebarTab
-               v-for="tab in section.tabs"
+               v-for="tab in profile_tabs"
                :key="tab.id"
                :tab="tab"
                :class="(tab.id == 0) ? 'mt-6' : 'mt-4'"
-               @click="setTab(tab.id)"
+               @click="setTab(tab.label)"
+            ></SidebarTab>
+
+         </div>
+
+         <div class="sidebar-section flex flex-col items-start w-full">
+
+            <span class="sidebar-section__text inline-block tracking-wider uppercase">
+               Global
+            </span>
+
+            <SidebarTab
+               v-for="tab in global_tabs"
+               :key="tab.id"
+               :tab="tab"
+               :class="(tab.id == 0) ? 'mt-6' : 'mt-4'"
+               @click="setTab(tab.label)"
             ></SidebarTab>
 
          </div>
@@ -58,12 +70,6 @@
 
       websiteName = 'website';
 
-      get sections() {
-
-         return vxm.root.getSections;
-
-      }
-
    // Tabs Configuration
 
       get currentPage() {
@@ -71,11 +77,35 @@
          return vxm.root.getCurrentTab.page;
       
       }
+
+      get profile_tabs() {
+
+         return vxm.root.getTabs.filter(t => {
+
+            return (t.g_label == 'profile');
+
+         });
+
+      }
+
+      get global_tabs() {
+
+         return vxm.root.getTabs.filter(t => {
+
+            return (t.g_label == 'global');
+
+         });
+
+      }
       
-      setTab(id: number): void {
-         
-         vxm.root.setTab(id);
-         this.$router.replace({ path: `/${this.currentPage}` });
+      setTab(name: string): void {
+
+         if(this.currentPage != name) {
+
+            vxm.root.setTab(name);
+
+         }
+
 
       }
 

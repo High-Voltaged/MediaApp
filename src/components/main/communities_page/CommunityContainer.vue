@@ -101,6 +101,10 @@
          return vxm.communities.currentCmnTab.page;
       }
 
+      get currentCmnId() {
+         return vxm.communities.getCurrentCmn;
+      }
+
       setTab(id: number) {
 
          vxm.communities.setCmnTab(id);
@@ -109,8 +113,11 @@
 
       setCmnPage(id: number) {
 
-         vxm.communities.setCommunityPage(id);
-         this.$router.replace({ path: `communities/community/${id}` });
+         if(this.currentCmnId != id) {
+
+            vxm.communities.setCommunityPage(id);
+
+         }
 
       }
 

@@ -106,23 +106,18 @@ export default class Communities extends VuexModule {
       ];
 
       currentCmnId: number = null;
-      currentCmnPage: string = null;
 
       get getCommunities() {
          return this.communities;
       }
    
       get getCurrentCmn() {
-         return {
-            id: this.currentCmnId,
-            page: this.currentCmnPage,
-         };
+         return this.currentCmnId;
       }
 
       @mutation setCommunityPage(id: number) {
 
          this.currentCmnId = id;
-         this.currentCmnPage = 'community';
 
       }
 
