@@ -7,63 +7,109 @@
 
 
 .page__community {
-
-   > .sub {
-      width: 65%; 
-   }
+   width: calc(100% - 2.5rem);
+   margin-right: 1.25rem;
+   margin-left: 1.25rem;
 
    &__header {
-      height: 14rem;
+      min-height: 10.625rem;
+      width: calc(100% - 3rem);
+      margin-right: 1.5rem;
+      margin-left: 1.5rem;
 
-      border: 1px solid rgba(var(--color-white-2), .5);
-      
       .header-content {
-         width: calc(100% - 3rem);
-         height: 13rem;
+         padding: 20px 35px;
+         
+         border-radius: 0 0 40px 40px;
+         background: linear-gradient(rgba(var(--color-gray-light), 1), rgba(var(--color-gray-4), 1));
+         box-shadow: 0 4px 6px 0 rgba(0, 0, 0, .3);
 
-         background-color: rgba(var(--color-gray-2), 1);
-         border-radius: 25px;
+         &__info {
+            max-width: 25rem;
+            margin-left: 42px;
+
+            .title {
+               color: rgba(var(--color-white-1), 1);
+               @include typography(22px, 500, 1.5);
+               text-shadow: var(--heading-shadow);
+            }
+
+            .category span {
+               color: rgba(255, 255, 255, .7);
+            }
+
+            .followers_num > .num {
+               color: rgba(var(--color-purple-1), 1);
+               @include typography(16px, 500, var(--l-height));
+            }
+
+            .followers_num > .text {
+               color: rgba(var(--color-white-1), 1);
+               @include typography(16px, 400, var(--l-height));
+            }
+
+            .description {
+               color: rgba(var(--color-white-1), 1);
+               @include typography(14px, 400, var(--l-height));
+            }
+         }
+
+         &__follow {
+            margin-left: 42px;
+         }
+      }
+      
+      &__el {
+         position: absolute;
+         top: -8px;
+         left: -43px;
       }
    }
 
    &__posts {
-
-      border: 1px solid rgba(var(--color-white-2), .5);
+      width: auto;
+      height: 10rem;
+      // border: 1px solid white;
    }
-   
+
    &__info {
-      width: 35%;
+      width: auto;
 
-      border: 1px solid rgba(var(--color-white-2), .5);
-      
-      .info-section {
-         height: auto;
+      .info-content {
+         width: 17.5rem;
+         max-height: 18.125rem;
+         padding: 20px;
 
-         background-color: rgba(var(--color-gray-2), 1);
-         border-radius: 20px;
-         
-         &__header > span {
-            color: rgba(var(--color-white-2), .8);
-            @include typography(14.5px, 600);
+         border-radius: 20px 0 0 20px;
+         background: linear-gradient(225deg, rgba(var(--color-gray-3), 1), rgba(var(--color-gray-light), 1) 65%);
+         box-shadow: 0 0 10px 0 rgba(0, 0, 0, .35);
+
+         &__title {
+            color: rgba(var(--color-white-1), 1);
+            @include typography(16px, 500, var(--l-height-sm));
+            text-shadow: var(--subheading-shadow);
          }
 
-         &__info > p{
-            color: rgba(var(--color-white-2), 1);
-            @include typography(13px, 500);
+         &__admins {
+            margin-top: 0.875rem;
          }
 
-         &__followers span {
-            color: rgba(var(--color-white-2), 1);
-            @include typography(12px, 600);
-         }
+         &__admin {
+            &:not(:first-child) {
+               margin-top: 1.125rem;
+            }
 
-         &__username > span {
-            color: rgba(var(--color-white-2), 1);
-            @include typography(14px, 500);
+            .username {
+               color: rgba(var(--color-white-1), 1);
+               @include typography(14px, 500, var(--l-height));
+            }
+
+            .mini-shadow-btn {
+               box-shadow: 0 0 6px 0 rgba(0, 0, 0, .2);
+            }
          }
       }
    }
-   
 }
 
 
@@ -138,13 +184,13 @@
 
    &__name {
       color: rgba(var(--color-white-2), 1);
-      @include typography(14px, 500);
+      @include typography(14px, 500, var(--l-height));
    }
 
    &__tag {
       span {
          color: rgba(var(--color-white-2), .8);
-         @include typography(12px, 400);
+         @include typography(12px, 400, var(--l-height));
       }
    }
 
@@ -156,14 +202,14 @@
 
       > span {
          color: rgba(var(--color-white-2), .8);
-         @include typography(13px, 400);
+         @include typography(13px, 400, var(--l-height));
       }
    }
 
    &__badge {
       span {
          color: rgba(var(--color-white-2), 1);
-         @include typography(10px, 600);
+         @include typography(10px, 600, var(--l-height));
       }
    }
 
@@ -186,7 +232,7 @@
    
    > span {
       color: rgba(var(--color-white-2), .5);
-      @include typography(14px, 500);
+      @include typography(14px, 500, var(--l-height));
       @extend %base_transition;
 
       &.selected {
@@ -252,7 +298,7 @@
 
       > span {
          color: rgba(var(--color-white-2), 1);
-         @include typography(15px, 400);
+         @include typography(15px, 400, var(--l-height));
          @extend %base_transition;
       }
    }
@@ -394,6 +440,10 @@ input, textarea  {
    &:hover, &:focus, &:active {
       -webkit-box-shadow: var(--avatar-shadow) !important;
       box-shadow: var(--avatar-shadow) !important;
+   }
+
+   &-content.history .vs-avatar {
+      border: 2px solid rgba(var(--color-gray-light), 1) !important;
    }
 }
 

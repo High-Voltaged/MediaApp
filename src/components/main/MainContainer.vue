@@ -1,6 +1,6 @@
 <template>
    
-   <div class="container-util flex-auto flex flex-col items-start relative px-8 pt-4">
+   <div class="container-util flex-auto flex flex-col items-start p-4 overflow-hidden">
 
       <Navbar />
 

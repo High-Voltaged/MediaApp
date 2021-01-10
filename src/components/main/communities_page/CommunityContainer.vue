@@ -11,7 +11,6 @@
             @click="setTab($event)"
          ></Tabs>
 
-
       </div>
       
       <div v-if="!communities.length" class="community-container__default flex auto flex items-center justify-center w-full p-8">
@@ -21,7 +20,6 @@
          </div>
 
       </div>
-
 
       <div v-else class="flex-auto flex flex-col items-center w-full py-8 px-6 overflow-y-auto overflow-x-hidden">
 
@@ -77,7 +75,7 @@
             let tempCmns = vxm.communities.getCommunities;
 
             tempCmns = tempCmns.filter(c => {
-               return (c.category == this.currentPage);
+               return (c.category == this.currentPage.toLowerCase());
             })
 
             return tempCmns;

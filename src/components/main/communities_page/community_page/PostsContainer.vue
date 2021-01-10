@@ -1,6 +1,6 @@
 <template>
    
-   <div class="page__community__posts flex-auto w-full">
+   <div class="page__community__posts flex-auto">
 
       
 
