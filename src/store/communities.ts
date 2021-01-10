@@ -18,8 +18,9 @@ export default class Communities extends VuexModule {
             id: 4080932,
             avatar: 'https://images.unsplash.com/photo-1595575690738-5fe411dccb94?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60',
             name: 'Big Science',
-            category: 'Science',
+            category: 'science',
             followers_num: 59832,
+            description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
 
             suggested: true,
             managed: true,
@@ -29,8 +30,9 @@ export default class Communities extends VuexModule {
             id: 3982022,
             avatar: 'https://images.unsplash.com/photo-1599639668392-5b44355c76f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60',
             name: 'Statistics',
-            category: 'Math',
+            category: 'math',
             followers_num: 32973,
+            description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
 
             suggested: false,
             managed: false,
@@ -41,8 +43,9 @@ export default class Communities extends VuexModule {
             id: 2092882,
             avatar: 'https://images.unsplash.com/photo-1600156336721-0afd66a25271?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60',
             name: 'World Nature',
-            category: 'Nature',
+            category: 'nature',
             followers_num: 29801,
+            description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
 
             suggested: false,
             managed: false,
@@ -52,8 +55,9 @@ export default class Communities extends VuexModule {
             id: 3983929,
             avatar: 'https://images.unsplash.com/photo-1595575690738-5fe411dccb94?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60',
             name: 'Sports Group',
-            category: 'Sports',
+            category: 'sports',
             followers_num: 2902899,
+            description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
 
             suggested: true,
             managed: true,
@@ -63,8 +67,9 @@ export default class Communities extends VuexModule {
             id: 3832811,
             avatar: 'https://images.unsplash.com/photo-1599639668392-5b44355c76f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60',
             name: 'Athletes',
-            category: 'Sports',
+            category: 'sports',
             followers_num: 287157398,
+            description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
 
             suggested: true,
             managed: true,
@@ -74,8 +79,9 @@ export default class Communities extends VuexModule {
             id: 3929001,
             avatar: 'https://images.unsplash.com/photo-1600156336721-0afd66a25271?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60',
             name: 'World Nature',
-            category: 'Nature',
+            category: 'nature',
             followers_num: 20910919,
+            description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
             
             suggested: false,
             managed: false,
@@ -85,8 +91,9 @@ export default class Communities extends VuexModule {
             id: 3938299,
             avatar: 'https://images.unsplash.com/photo-1595575690738-5fe411dccb94?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60',
             name: 'Big Science',
-            category: 'Science',
+            category: 'science',
             followers_num: 30920,
+            description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
 
             suggested: true,
             managed: false,
@@ -96,8 +103,9 @@ export default class Communities extends VuexModule {
             id: 9090882,
             avatar: 'https://images.unsplash.com/photo-1599639668392-5b44355c76f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60',
             name: 'Statistics',
-            category: 'Math',
+            category: 'math',
             followers_num: 4092,
+            description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
             
             suggested: true,
             managed: true,
@@ -113,6 +121,16 @@ export default class Communities extends VuexModule {
    
       get getCurrentCmn() {
          return this.currentCmnId;
+      }
+
+      get getCurrentPage() {
+
+         return this.communities.find(c => {
+
+            return (c.id == this.currentCmnId);
+
+         });
+
       }
 
       @mutation setCommunityPage(id: number) {
@@ -154,10 +172,10 @@ export default class Communities extends VuexModule {
    // Category Tabs
 
       categories = [
-         { id: 2, label: 'Sports', icon: 'volleyball-ball' },
-         { id: 3, label: 'Science', icon: 'microscope' },
-         { id: 4, label: 'Nature', icon: 'tree' },
-         { id: 5, label: 'Math', icon: 'square-root-alt' },
+         { id: 2, label: 'Sports', default: 'No such communities yet.', icon: 'volleyball-ball' },
+         { id: 3, label: 'Science', default: 'No such communities yet.', icon: 'microscope' },
+         { id: 4, label: 'Nature', default: 'No such communities yet.', icon: 'tree' },
+         { id: 5, label: 'Math', default: 'No such communities yet.', icon: 'square-root-alt' },
       ];
       
       get getCategories() {

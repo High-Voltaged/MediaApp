@@ -1,16 +1,16 @@
 <template>
    
-   <div class="page__community sub flex-auto flex items-start w-full relative pt-4 overflow-x-hidden overflow-y-auto">
+   <div class="page__community sub flex-auto flex flex-col items-start w-full pt-6">
 
-      <div class="sub flex flex-col items-start h-full">
+      <CommunityHeader></CommunityHeader>
          
-         <CommunityHeader></CommunityHeader>
-
+      <div class="flex items-start w-full mt-7">
+         
          <PostsContainer></PostsContainer>
          
-      </div>      
+         <CommunityInfo></CommunityInfo>
 
-      <CommunityInfo></CommunityInfo>
+      </div>
 
    </div> 
 
