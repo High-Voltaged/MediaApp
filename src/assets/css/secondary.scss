@@ -67,9 +67,31 @@
    }
 
    &__posts {
-      width: auto;
-      height: 10rem;
-      // border: 1px solid white;
+      width: 600px;
+      margin-right: 70px;
+
+      .posts-content {
+         &__header {
+            padding: 6px 30px;
+
+            border-radius: 20px 20px 0 0;
+            background-color: rgba(var(--color-gray-light), 1);
+            box-shadow: 0 0 8px 0 rgba(0, 0, 0, .5);
+            
+            .title {
+               color: rgba(var(--color-white-1), 1);
+               @include typography(16px, 500, var(--l-height-sm));
+               text-shadow: var(--subheading-shadow);
+            }
+         } 
+         
+         &__posts {
+            margin-top: 0.75rem;
+
+            background-color: rgba(var(--color-gray-light), 1);
+            box-shadow: 0 0 8px 0 rgba(0, 0, 0, .5);
+         }
+      }
    }
 
    &__info {
@@ -360,6 +382,8 @@
 
 
 // BUTTON STYLING -- OVERRIDING
+
+// note : use 'icon' attribute for icon btns
 
 .shadow-button {
    background-color: rgba(var(--color-gray-1), 1) !important;

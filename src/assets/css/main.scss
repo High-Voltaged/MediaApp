@@ -161,12 +161,13 @@ button {
 
    .sidebar-logo {
       height: var(--navbar-util-height);
+      
+      &__text {
+         color: rgba(var(--color-white-2), 1);
+         @include typography(18px, 600, var(--line-height));
+      }
    }
 
-   .sidebar-logo__text {
-      color: rgba(var(--color-white-2), 1);
-      @include typography(18px, 600, var(--line-height));
-   }
 
    .sidebar-section__text {
       color: rgba(var(--color-white-2), 1);

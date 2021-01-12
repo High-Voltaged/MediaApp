@@ -6,7 +6,7 @@
 
          <font-awesome-icon 
             :icon="['fas', tab.icon]" 
-            class="sidebar-tab__icon w-4 h-4 fill-current" 
+            class="sidebar-tab__icon flex-0 w-4 h-4 fill-current" 
             :class="{ 'selected': isSelected() }"
          />
       

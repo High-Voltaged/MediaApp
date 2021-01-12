@@ -47,7 +47,7 @@
             </div>
 
             <div class="flex items-center justify-end w-full">
-               <vs-button transparent icon color="#000000">
+               <vs-button transparent icon color="#FFFFFF">
                   <font-awesome-icon :icon="['fas', 'chevron-down']" class="w-3 h-3 fill-current text-white" />
                </vs-button>
             </div>

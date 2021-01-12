@@ -6,7 +6,7 @@
 @mixin typography($size, $weight, $line-height) {
    font-size: $size;
    font-weight: $weight;
-   line-height: calc($size * $line-height);
+   line-height: calc(#{$size} * #{$line-height});
 }
 
 

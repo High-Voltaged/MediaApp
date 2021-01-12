@@ -11,10 +11,10 @@
    --color-gray-4: 35, 37, 41; // new
    
    --color-gray-light: 44, 46, 51;
+   --color-gray-dark: 24, 25, 28; // secondary
    
    --color-purple-1: 147, 112, 219; // purple-primary #9370DB
    
-   --color-gray-dark: 24, 25, 28; // secondary
 }
 
 
@@ -23,7 +23,7 @@
 
 :root {
 
-   --sidebar-width: 15rem;
+   --sidebar-width: 13.5rem;
    --main-util-width: 65%;
    --secondary-util-width: 35%;
 
