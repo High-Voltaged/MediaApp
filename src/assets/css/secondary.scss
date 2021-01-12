@@ -13,9 +13,9 @@
 
    &__header {
       min-height: 10.625rem;
-      width: calc(100% - 3rem);
-      margin-right: 1.5rem;
-      margin-left: 1.5rem;
+      width: calc(100% - 5rem);
+      margin-right: 2.5rem;
+      margin-left: 2.5rem;
 
       .header-content {
          padding: 20px 35px;
@@ -106,6 +106,19 @@
 
             .mini-shadow-btn {
                box-shadow: 0 0 6px 0 rgba(0, 0, 0, .2);
+            }
+         }
+      }
+
+      &-btn {
+         margin-top: 40px;
+         margin-left: -30px;
+
+         button {
+            border-radius: 8px 0 0 8px !important;
+            box-shadow: 0 0 8px 0 rgba(0, 0, 0, .4);
+            &:hover {
+               box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
             }
          }
       }

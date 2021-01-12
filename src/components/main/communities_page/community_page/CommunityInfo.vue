@@ -2,7 +2,17 @@
    
    <div class="page__community__info flex items-start justify-end">
 
-      <div class="info-content flex flex-col items-start" style="padding-bottom: 10px">
+      <div class="page__community__info-btn inline-block">
+
+         <vs-button @click="collapseInfo" icon color="#232529">
+
+            <font-awesome-icon :icon="['fas', (collapse_info ? 'plus' : 'minus')]" class="w-4 h-4 fill-current text-white" />
+
+         </vs-button>
+
+      </div>
+
+      <div v-if="!collapse_info" class="info-content flex flex-col items-start z-10" style="padding-bottom: 10px">
 
          <div class="info-content__title flex justify-center items-center w-full">
             
@@ -68,6 +78,14 @@
          { id: 2982039, username: 'Mary Johnson', tag: 'moderator', src: 'https://images.unsplash.com/photo-1552334949-51934e5f2d38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60' },
          { id: 3883234, username: 'Ariel Auldrin', tag: 'moderator', src: 'https://images.unsplash.com/photo-1609999962569-f0f757358cf7?ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDR8dG93SlpGc2twR2d8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60' },
       ];
+      
+      collapse_info = false;
+
+      collapseInfo(): void {
+
+         this.collapse_info = !this.collapse_info;
+
+      }
 
    } 
 
