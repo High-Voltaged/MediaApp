@@ -1,4 +1,6 @@
 import { createModule, mutation, action } from 'vuex-class-component';
+import ICommunity from '../../interfaces/community';
+import followers_format from '../scripts/num_formatting';
 
 const VuexModule = createModule({
    namespaced: 'communities',
@@ -7,19 +9,18 @@ const VuexModule = createModule({
 })
 
 type Category = 'Sports' | 'Science' | 'Nature' | 'Math'; 
-
 export default class Communities extends VuexModule {
 
    // Base Community Cards Configuration
 
-      communities = [
+      communities: ICommunity[] = [
 
          {
             id: 4080932,
             avatar: 'https://images.unsplash.com/photo-1595575690738-5fe411dccb94?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60',
             name: 'Big Science',
             category: 'science',
-            followers_num: 59832,
+            followers: 3000000000,
             description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
 
             suggested: true,
@@ -31,7 +32,7 @@ export default class Communities extends VuexModule {
             avatar: 'https://images.unsplash.com/photo-1599639668392-5b44355c76f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60',
             name: 'Statistics',
             category: 'math',
-            followers_num: 32973,
+            followers: 32973,
             description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
 
             suggested: false,
@@ -44,7 +45,7 @@ export default class Communities extends VuexModule {
             avatar: 'https://images.unsplash.com/photo-1600156336721-0afd66a25271?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60',
             name: 'World Nature',
             category: 'nature',
-            followers_num: 29801,
+            followers: 29801,
             description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
 
             suggested: false,
@@ -56,7 +57,7 @@ export default class Communities extends VuexModule {
             avatar: 'https://images.unsplash.com/photo-1595575690738-5fe411dccb94?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60',
             name: 'Sports Group',
             category: 'sports',
-            followers_num: 2902899,
+            followers: 2902899,
             description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
 
             suggested: true,
@@ -68,7 +69,7 @@ export default class Communities extends VuexModule {
             avatar: 'https://images.unsplash.com/photo-1599639668392-5b44355c76f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60',
             name: 'Athletes',
             category: 'sports',
-            followers_num: 287157398,
+            followers: 287157398,
             description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
 
             suggested: true,
@@ -80,7 +81,7 @@ export default class Communities extends VuexModule {
             avatar: 'https://images.unsplash.com/photo-1600156336721-0afd66a25271?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60',
             name: 'World Nature',
             category: 'nature',
-            followers_num: 20910919,
+            followers: 20910919,
             description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
             
             suggested: false,
@@ -92,7 +93,7 @@ export default class Communities extends VuexModule {
             avatar: 'https://images.unsplash.com/photo-1595575690738-5fe411dccb94?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60',
             name: 'Big Science',
             category: 'science',
-            followers_num: 30920,
+            followers: 30920,
             description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
 
             suggested: true,
@@ -104,7 +105,7 @@ export default class Communities extends VuexModule {
             avatar: 'https://images.unsplash.com/photo-1599639668392-5b44355c76f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60',
             name: 'Statistics',
             category: 'math',
-            followers_num: 4092,
+            followers: 4092,
             description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
             
             suggested: true,
@@ -116,7 +117,14 @@ export default class Communities extends VuexModule {
       currentCmnId: number = null;
 
       get getCommunities() {
-         return this.communities;
+         
+         return this.communities.map(c => {
+
+            c.followers = followers_format(c.followers);
+            return c;
+
+         })
+
       }
    
       get getCurrentCmn() {

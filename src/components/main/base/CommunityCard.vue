@@ -1,6 +1,10 @@
 <template>
    
-   <router-link :to="{ path: `communities/community/${card.id}` }" tag="div" class="community-card flex items-center relative w-full py-4 px-6 space-x-5 cursor-pointer">
+   <router-link 
+      :to="{ path: `communities/community/${card.id}` }" 
+      tag="div" 
+      class="community-card flex items-center relative w-full py-4 px-6 space-x-5 cursor-pointer"
+   >
 
       <div class="community-card__avatar flex-0">
 
@@ -45,7 +49,7 @@
             </div>
 
             <span class="ml-2">
-               {{ card.followers_num }}
+               {{ card.followers }}
             </span>
 
             <span class="ml-1">

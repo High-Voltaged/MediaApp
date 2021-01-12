@@ -35,7 +35,7 @@
                   </span>
 
                   <span class="num ml-1">
-                     {{ cmn.followers_num }}
+                     {{ cmn.followers }}
                   </span>
 
                   <span class="text ml-2"> followers </span>

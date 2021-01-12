@@ -1,13 +1,13 @@
 <template>
    
-   <div class="page__community sub flex-auto flex flex-col items-start w-full pt-6">
+   <div class="page__community sub flex-auto flex flex-col items-start w-full pt-6 overflow-y-auto overflow-x-hidden">
 
       <CommunityHeader></CommunityHeader>
          
       <div class="flex items-start w-full mt-7">
          
          <PostsContainer></PostsContainer>
-         
+
          <CommunityInfo></CommunityInfo>
 
       </div>
