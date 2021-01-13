@@ -18,9 +18,12 @@
 
          </div>
 
-         <div class="posts-content__posts flex-auto">
+         <div class="posts-content__posts flex-auto space-y-10">
 
-
+            <CommunityPost
+               v-for="post in 5"
+               :key="post"
+            ></CommunityPost>
 
          </div>
 
@@ -33,11 +36,13 @@
 <script lang="ts">
 
    import { Component, Prop, Vue, Watch } from "nuxt-property-decorator";
+   import CommunityPost from '../../base/CommunityPost.vue';
    import { vxm } from '../../../../store'; 
 
    @Component({
       name: 'PostContainer',
       components: {
+         CommunityPost,
       }
    })
    export default class PostContainer extends Vue {

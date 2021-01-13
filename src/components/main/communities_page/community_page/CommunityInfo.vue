@@ -39,7 +39,7 @@
                </span>
 
                <div class="tag ml-4">
-                  <vs-button size="mini" circle color="#2F3136" class="mini-shadow-btn">
+                  <vs-button size="mini" circle color="#32353B" class="mini-shadow-btn">
                      {{ admin.tag }}
                   </vs-button>
                </div>
