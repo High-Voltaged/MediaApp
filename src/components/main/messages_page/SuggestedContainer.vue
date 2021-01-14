@@ -78,3 +78,31 @@
    } 
 
 </script>
+
+<style lang="scss" scoped>
+
+   .suggested-container {
+
+      width: var(--secondary-util-width);
+      height: 100%;
+      max-height: 100%;
+
+      &.collapsed {
+         width: var(--navbar-util-height) !important;
+         margin-left: 2rem;
+         @extend %base_transition;
+      }
+
+      &__bar {
+         height: var(--navbar-util-height);
+      }
+
+      &__collapse-btn {
+         svg {
+            color: rgba(var(--color-white-2), 1);
+         }
+      }
+
+   }
+
+</style>

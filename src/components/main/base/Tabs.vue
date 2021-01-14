@@ -60,3 +60,43 @@
    } 
 
 </script>
+
+<style lang="scss" scoped>
+
+   .tab-util {
+   
+      > span {
+         color: rgba(var(--color-white-2), .5);
+         @include typography(14px, 500, var(--l-height));
+         @extend %base_transition;
+
+         &.selected {
+            color: rgba(var(--color-white-2), 1);
+         }
+
+         &:hover, &:focus {
+            color: rgba(var(--color-white-2), 1);
+         }
+      }
+
+      > .selected-badge {
+         height: 5px;
+         width: 35px;
+
+         border-radius: 20px 20px 0 0;
+         background-color: rgba(var(--color-purple-1), 1);
+         @extend %base_transition;
+
+         &.selected {
+            opacity: 1;
+            transform: translateY(0);
+         }
+
+         &.unselected {
+            opacity: 0;
+            transform: translateY(5px);
+         }
+      } 
+   }
+
+</style>

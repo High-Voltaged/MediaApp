@@ -112,3 +112,31 @@
    } 
 
 </script>
+
+<style lang="scss" scoped>
+
+   .sidebar-util {
+   
+      width: var(--sidebar-width);
+      height: 100%;
+
+      border-right: 1px solid rgba(var(--color-white-2), .1);
+
+      .sidebar-logo {
+         height: var(--navbar-util-height);
+         
+         &__text {
+            color: rgba(var(--color-white-2), 1);
+            @include typography(18px, 600, var(--line-height));
+         }
+      }
+
+
+      .sidebar-section__text {
+         color: rgba(var(--color-white-2), 1);
+         @include typography(12px, 600, var(--line-height));
+      }
+
+   }
+
+</style>

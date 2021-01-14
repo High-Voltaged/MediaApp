@@ -81,3 +81,29 @@
    } 
 
 </script>
+
+<style lang="scss" scoped>
+
+   .navbar-util__dropdown {
+      width: var(--dropdown-width);
+      min-height: var(--dropdown-height);
+      
+      opacity: 1;
+      transform: translateY(100%);
+      background-color: rgba(var(--color-gray-4), 1);
+      border-radius: 20px 5px 20px 10px;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);
+      z-index: 100;
+
+      &__content {
+         min-height: var(--dropdown-content-height);
+         max-height: calc(var(--dropdown-content-height) * 3);
+      }
+
+      &__default > div {
+         color: rgba(var(--color-white-2), 1);
+         @include typography(16px, 500, var(--line-height));
+      }
+   }
+
+</style>

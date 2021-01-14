@@ -117,3 +117,65 @@
    } 
 
 </script>
+
+<style lang="scss" scoped>
+
+   .community-card {
+
+      min-height: var(--community-card-height);
+      border-radius: 15px;
+      // background-color: rgba(var(--color-gray-light), 1);
+      background-color: rgba(var(--color-gray-4), 1);
+      box-shadow: var(--card-shadow);
+      @extend %base_transition;
+      z-index: 50;
+
+      &:hover, &:focus, &:active {
+         box-shadow: var(--card-shadow-hover);
+         transform: translate(0, 6px);
+      }
+
+      &__name {
+         color: rgba(var(--color-white-2), 1);
+         @include typography(14px, 500, var(--l-height));
+      }
+
+      &__tag {
+         span {
+            color: rgba(var(--color-white-2), .8);
+            @include typography(12px, 400, var(--l-height));
+         }
+      }
+
+      &__followers {
+
+         > div {
+            color: rgba(var(--color-white-2), .8);
+         }
+
+         > span {
+            color: rgba(var(--color-white-2), .8);
+            @include typography(13px, 400, var(--l-height));
+         }
+      }
+
+      &__badge {
+         span {
+            color: rgba(var(--color-white-2), 1);
+            @include typography(10px, 600, var(--l-height));
+         }
+      }
+
+      &__join.reduced {
+         position: absolute;
+         right: -6px;
+         top: -6px;
+
+         .vs-button__content {
+            padding: 6px !important;
+         }
+      }
+
+   }
+
+</style>

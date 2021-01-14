@@ -114,3 +114,62 @@
    } 
 
 </script>
+
+<style lang="scss" scoped>
+
+   .page__community__header {
+      min-height: 10.625rem;
+      width: calc(100% - 5rem);
+      margin-right: 2.5rem;
+      margin-left: 2.5rem;
+
+      .header-content {
+         padding: 20px 35px;
+         
+         border-radius: 0 0 40px 40px;
+         background: linear-gradient(rgba(var(--color-gray-light), 1), rgba(var(--color-gray-4), 1));
+         box-shadow: 0 4px 6px 0 rgba(0, 0, 0, .3);
+
+         &__info {
+            max-width: 25rem;
+            margin-left: 42px;
+
+            .title {
+               color: rgba(var(--color-white-1), 1);
+               @include typography(22px, 500, 1.5);
+               text-shadow: var(--heading-shadow);
+            }
+
+            .category span {
+               color: rgba(255, 255, 255, .7);
+            }
+
+            .followers_num > .num {
+               color: rgba(var(--color-purple-1), 1);
+               @include typography(16px, 500, var(--l-height));
+            }
+
+            .followers_num > .text {
+               color: rgba(var(--color-white-1), 1);
+               @include typography(16px, 400, var(--l-height));
+            }
+
+            .description {
+               color: rgba(var(--color-white-1), 1);
+               @include typography(14px, 400, var(--l-height));
+            }
+         }
+
+         &__follow {
+            margin-left: 42px;
+         }
+      }
+      
+      &__el {
+         position: absolute;
+         top: -8px;
+         left: -43px;
+      }
+   }
+
+</style>

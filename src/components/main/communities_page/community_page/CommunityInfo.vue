@@ -90,3 +90,59 @@
    } 
 
 </script>
+
+<style lang="scss" scoped>
+
+   .page__community__info {
+      width: auto;
+
+      .info-content {
+         width: 17.5rem;
+         max-height: 18.125rem;
+         padding: 20px;
+
+         border-radius: 20px 0 0 20px;
+         background: linear-gradient(225deg, rgba(var(--color-gray-3), 1), rgba(var(--color-featured), 1) 80%);
+         box-shadow: 0 0 10px 0 rgba(0, 0, 0, .35);
+
+         &__title {
+            color: rgba(var(--color-white-1), 1);
+            @include typography(16px, 500, var(--l-height-sm));
+            text-shadow: var(--subheading-shadow);
+         }
+
+         &__admins {
+            margin-top: 0.875rem;
+         }
+
+         &__admin {
+            &:not(:first-child) {
+               margin-top: 1.125rem;
+            }
+
+            .username {
+               color: rgba(var(--color-white-1), 1);
+               @include typography(14px, 500, var(--l-height));
+            }
+
+            .mini-shadow-btn {
+               box-shadow: 0 0 4px 0 rgba(0, 0, 0, .2);
+            }
+         }
+      }
+
+      &-btn {
+         margin-top: 40px;
+         margin-left: -30px;
+
+         button {
+            border-radius: 8px 0 0 8px !important;
+            box-shadow: 0 0 8px 0 rgba(0, 0, 0, .4);
+            &:hover {
+               box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
+            }
+         }
+      }
+   }
+
+</style>

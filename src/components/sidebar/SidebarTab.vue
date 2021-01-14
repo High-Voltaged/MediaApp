@@ -61,3 +61,44 @@
    } 
 
 </script>
+
+<style lang="scss" scoped>
+
+   .sidebar-util .sidebar-tab {
+      
+      &__text {
+         color: rgba(var(--color-white-2), .8);
+         @include typography(14px, 500, var(--line-height));
+      }
+      
+      &__icon {
+         color: rgba(var(--color-white-2), .8);
+      }
+
+      &__selected {
+         width: 5px;
+         height: 100%;
+
+         border-radius: 0 20px 20px 0;
+         background-color: rgba(var(--color-purple-1), 1);
+         @extend %base_transition;
+         
+         &.selected_badge {
+            transform: translateX(0) !important;
+            opacity: 1 !important;
+         }
+   
+         &.unselected-badge {
+            transform: translateX(-6px);
+            opacity: 0;
+         }
+      }
+
+      .selected {
+         color: rgba(var(--color-purple-1), 1);
+         @extend %base_transition;
+      }
+   
+   }
+
+</style>

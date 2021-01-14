@@ -91,3 +91,29 @@
    } 
 
 </script>
+
+<style lang="scss" scoped>
+
+   .navbar-util {
+
+      height: var(--navbar-util-height);
+
+      &__search {
+         width: 10rem;
+         
+         input {
+            @include typography(13px, 500, var(--line-height));
+         }
+      }
+
+      .unread {
+         color: rgba(var(--color-purple-1), 1);
+      }
+
+      .vs-input__icon > svg {
+         color: rgba(var(--color-white-2), .8) !important
+      }
+
+   }
+
+</style>

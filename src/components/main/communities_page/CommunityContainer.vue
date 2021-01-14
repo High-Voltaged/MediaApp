@@ -130,3 +130,24 @@
    } 
 
 </script>
+
+<style lang="scss" scoped>
+
+   .community-container {
+
+      width: 60%;
+      height: 100%;
+      max-height: 100%;
+
+      &__bar {
+         height: var(--navbar-util-height);
+      }
+
+      &__default > div {
+         color: rgba(var(--color-white-2), 1);
+         @include typography(16px, 500, var(--line-height));
+      }
+
+   }
+
+</style>

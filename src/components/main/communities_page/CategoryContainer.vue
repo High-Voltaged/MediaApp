@@ -62,3 +62,27 @@
    } 
 
 </script>
+
+<style lang="scss" scoped>
+
+   .category-container {
+      width: 40%;
+      height: 100%;
+      max-height: 100%;
+      padding-top: var(--navbar-util-height);
+
+      &__content {
+         border-radius: 20px 0 0 20px;
+         // background-color: rgba(var(--color-gray-2), 1);
+         background: linear-gradient(135deg, rgba(var(--color-gray-light), 1), rgb(26, 27, 30));
+         box-shadow: 0 0 18px 0px rgba(0, 0, 0, .3);
+      }
+
+      &__badge {
+         transform: rotate(270deg);
+
+         z-index: 20;
+      }
+   }
+
+</style>

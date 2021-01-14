@@ -110,3 +110,60 @@
    } 
 
 </script>
+
+<style lang="scss" scoped>
+
+   .page__community__posts .posts-content__post {
+      &__main {
+         padding: 12px 30px;
+         
+         border-radius: 20px 20px 5px 5px;
+         background-color: rgba(var(--color-gray-3), 1);
+         box-shadow: 0 0 6px rgba(0, 0, 0, .7);
+
+         .post__rate {
+            left: -12px;
+            top: -12px;
+
+            span {
+               @include typography(13px, 500, var(--l-height));
+               color: rgba(var(--color-white-1), 1);
+            }
+
+            .vs-button__content {
+               padding: 10px 6px;
+            }
+         }
+
+         .post__header span {
+            @include typography(12px, 300, var(--l-height-sm));
+            color: rgba(255, 255, 255, .75);
+         }
+
+         .post__title {
+            margin-top: 10px;
+
+            span {
+               @include typography(15px, 400, 1.4);
+               color: rgba(var(--color-white-1), 1);
+            }
+         }
+      }
+
+      &__secondary {
+         padding: 5px 22px;
+         margin-left: .5rem;
+         margin-right: .5rem;
+
+         border-radius: 0 0 20px 20px;
+         background-color: rgba(var(--color-featured), 1);
+         box-shadow: 0 0 6px rgba(0, 0, 0, .7);
+
+         .post__comments span {
+            @include typography(12px, 500, var(--l-height));
+            color: rgba(var(--color-purple-1), 1);
+         }
+      }
+   }
+
+</style>

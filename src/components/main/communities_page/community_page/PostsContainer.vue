@@ -52,3 +52,37 @@
    } 
 
 </script>
+
+<style lang="scss" scoped>
+
+   .page__community__posts {
+      width: 600px;
+      margin-right: 70px;
+
+      .posts-content {
+         &__header {
+            padding: 6px 30px;
+
+            border-radius: 20px 20px 0 0;
+            background-color: #24262A; // ----
+            box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+            
+            .title {
+               color: rgba(var(--color-white-1), 1);
+               @include typography(16px, 500, var(--l-height-sm));
+               text-shadow: var(--subheading-shadow);
+            }
+         } 
+         
+         &__posts {
+            margin-top: 0.75rem;
+            padding: 30px 24px;
+
+            background-color: #24262A; // ----
+            box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+         }
+         
+      }
+   }
+
+</style>

@@ -106,3 +106,62 @@
    } 
 
 </script>
+
+<style lang="scss" scoped>
+
+   .message-container .message-card {
+
+      height: var(--message-card-height);
+
+      border-radius: 15px;
+      background: linear-gradient(45deg, rgba(var(--color-gray-light), 1), #1A1B1E);
+      box-shadow: var(--card-shadow);
+      @extend %base_transition;
+      z-index: 50;
+
+      &:hover, &:focus, &:active {
+         box-shadow: var(--card-shadow-hover);
+         transform: translate(0, 6px);
+
+         ~ .background-card-1 {
+            transform: translate(0, 6px);
+         }
+         ~ .background-card-2 {
+            transform: translate(0, 6px);
+         }
+         
+      }
+
+      &__username {
+         color: rgba(var(--color-white-2), 1);
+         @include typography(14px, 500, var(--line-height));
+      }
+
+      &__message {
+         color: rgba(var(--color-white-2), 1);
+         @include typography(13px, 400, var(--line-height));
+      }
+
+      &__timestamp {
+         color: rgba(var(--color-white-2), .4);
+         @include typography(11px, 300, var(--line-height));
+      }
+
+      &__badge {
+         border-radius: 12px;
+         box-shadow: 0 0 7px 1px rgba(0, 0, 0, .3);
+         transition: transform 0.3s ease-out;
+
+         &:hover, &:focus {
+            transform: translate(-3px, 3px);
+         }
+
+         > span {
+            color: rgba(var(--color-white-2), 1);
+            @include typography(13px, 500, var(--line-height));
+         }
+      }
+   
+   }
+
+</style>

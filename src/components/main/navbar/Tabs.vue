@@ -72,3 +72,37 @@
    } 
 
 </script>
+
+<style lang="scss" scoped>
+
+   .unread-tab {
+      
+      > span {
+         color: rgba(var(--color-white-2), .8);
+         @include typography(13px, 500, var(--line-height));
+      }
+
+      &.selected > span {
+         color: rgba(var(--color-white-2), 1);
+      }
+
+      .selected-badge {
+         height: 3px;
+         width: 40px;
+         border-radius: 10px 10px 0 0;
+         background-color: rgba(var(--color-purple-1), 1);
+         @extend %base_transition;
+
+         &.selected {
+            transform: translateY(0);
+            opacity: 1;
+         }
+         &.unselected {
+            transform: translateY(3px);
+            opacity: 0;
+         }
+      }
+      
+   }
+
+</style>

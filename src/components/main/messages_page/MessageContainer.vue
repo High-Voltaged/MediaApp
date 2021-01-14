@@ -185,3 +185,31 @@
    } 
 
 </script>
+
+<style lang="scss" scoped>
+
+   .message-container {
+
+      width: var(--main-util-width);
+      height: 100%;
+      max-height: 100%;
+
+      &.collapsed {
+         width: auto;
+         flex: 1 1 auto;
+      }
+
+      &__bar {
+         height: var(--navbar-util-height);
+
+         // box-shadow: 0 5px 10px -2px rgba(0, 0, 0, .3);
+      }
+
+      &__default > div {
+         color: rgba(var(--color-white-2), 1);
+         @include typography(16px, 500, var(--line-height));
+      }
+
+   }
+
+</style>

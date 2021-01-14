@@ -70,7 +70,7 @@
 
          <div class="unread-card__button inline-block flex-0">
 
-            <vs-button size="mini" color="#2f3136">
+            <vs-button icon size="mini" color="#2f3136">
 
                <font-awesome-icon :icon="['fas', 'times']" class="w-2 h-2 fill-current" />
 
@@ -101,3 +101,43 @@
    } 
 
 </script>
+
+<style lang="scss" scoped>
+
+   .unread-card {
+
+      &__content {
+         min-height: var(--unread-card-lg-height);
+   
+         background-color: rgba(var(--color-gray-3), 1);
+         border-radius: 10px;
+      }
+
+      &__at-card {
+         min-height: var(--unread-card-sm-height);
+
+         border-radius: 15px 0 0 15px;
+         &__name {
+            color: rgba(var(--color-white-2), 1);
+            @include typography(11px, 400, var(--line-height));
+         }
+      }
+
+      &__username > span {
+         color: rgba(var(--color-white-2), 1);
+         @include typography(14px, 500, var(--line-height));
+      }
+
+      &__text > span {
+         color: rgba(var(--color-white-2), .8);
+         @include typography(13px, 400, var(--line-height));
+      }
+
+      &__timestamp > span {
+         color: rgba(var(--color-white-2), .5);
+         @include typography(11px, 300, var(--line-height));
+      }
+
+   }
+
+</style>

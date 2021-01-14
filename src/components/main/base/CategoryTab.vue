@@ -61,3 +61,61 @@
    } 
 
 </script>
+
+<style lang="scss" scoped>
+
+   .category-tab {
+
+      background-color: transparent;
+      @extend %base_transition;
+   
+      &:hover, &:focus {
+         background-color: rgba(var(--color-gray-3), .2);
+      }
+
+      &.selected {
+         background-color: rgba(var(--color-gray-3), .4);
+      }
+
+      &__icon {
+         &.selected > svg {
+            color: rgba(var(--color-purple-1), 1);
+         }
+
+         > svg {
+            color: rgba(var(--color-white-2), 1);
+            @extend %base_transition;
+         }
+      }
+
+      &__text {
+         &.selected > span {
+            color: rgba(var(--color-purple-1), 1);
+         }
+
+         > span {
+            color: rgba(var(--color-white-2), 1);
+            @include typography(15px, 400, var(--l-height));
+            @extend %base_transition;
+         }
+      }
+      
+      &__selected {
+         width: 2.5px;
+         margin: 0;
+
+         background-color: rgba(var(--color-purple-1), 1);
+         @extend %base_transition;
+
+         &.selected-badge {
+            transform: translateX(0);
+            opacity: 1;
+         }
+         &.unselected-badge {
+            transform: translateX(-3px);
+            opacity: 0;
+         }
+      }
+   }
+
+</style>
