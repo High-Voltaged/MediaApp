@@ -23,6 +23,12 @@ export default ({ app: { router } }: Context) => {
          case 'community': {
 
             console.log('community path called');
+            if(vxm.root.getCurrentTab.page != 'communities') {
+
+               vxm.root.setTab('communities');
+            
+            }
+            
             if(vxm.communities.getCurrentCmn != Number(to.params.id)) {
       
                vxm.communities.setCommunityPage(Number(to.params.id));
