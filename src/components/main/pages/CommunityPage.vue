@@ -34,6 +34,12 @@
    })
    export default class CommunityPage extends Vue {
 
+      created() {
+
+         vxm.communities.formatFollowersNum(Number(this.$route.params.id));
+
+      }
+
       beforeDestroy() {
 
          vxm.communities.setCommunityPage(null);

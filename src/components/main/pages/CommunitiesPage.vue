@@ -26,6 +26,11 @@
    })
    export default class CommunitiesPage extends Vue {
 
+      created() {
+
+         vxm.communities.formatFollowersNum();
+
+      }
 
    } 
 

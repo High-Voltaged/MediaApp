@@ -118,12 +118,7 @@ export default class Communities extends VuexModule {
 
       get getCommunities() {
          
-         return this.communities.map(c => {
-
-            c.followers = followers_format(c.followers);
-            return c;
-
-         })
+         return this.communities;
 
       }
    
@@ -144,6 +139,30 @@ export default class Communities extends VuexModule {
       @mutation setCommunityPage(id: number) {
 
          this.currentCmnId = id;
+
+      }
+
+      @mutation formatFollowersNum(id: number = undefined) {
+
+         if(id) {
+
+            let cmn = this.communities.find(c => {
+
+               return (c.id == id);
+
+            });
+
+            cmn.followers = followers_format(cmn.followers);
+            return;
+
+         }
+
+         this.communities = this.communities.map(c => {
+
+            c.followers = followers_format(c.followers);
+            return c;
+
+         });
 
       }
 
