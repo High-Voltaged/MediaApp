@@ -119,8 +119,7 @@
 
    .page__community__header {
       min-height: 10.625rem;
-      width: calc(100% - 5rem);
-      margin-right: 2.5rem;
+      width: calc(100% - 2.5rem);
       margin-left: 2.5rem;
 
       .header-content {

@@ -1,10 +1,10 @@
 <template>
    
-   <div class="page__community sub flex-auto flex flex-col items-start w-full pt-6 overflow-y-auto overflow-x-hidden">
+   <div class="page__community sub flex-auto flex flex-col items-start w-full overflow-y-auto overflow-x-hidden">
 
       <CommunityHeader></CommunityHeader>
          
-      <div class="page__community__main flex-auto flex items-start justify-center w-full mt-7">
+      <div class="page__community__main flex-auto flex items-start justify-between 2xl:justify-center w-full">
          
          <PostsContainer></PostsContainer>
 
@@ -49,3 +49,15 @@
    } 
 
 </script>
+
+<style lang="scss" scoped>
+
+   .page__community {
+      padding: calc(var(--side-padding) / 2) var(--side-padding);
+
+      &__main {
+         margin: var(--container-spacing) 0 0;
+      }
+   }
+
+</style>

@@ -27,3 +27,8 @@
    export default class MessagesPage extends Vue {} 
 
 </script>
+
+<style lang="scss" scoped>
+
+
+</style>

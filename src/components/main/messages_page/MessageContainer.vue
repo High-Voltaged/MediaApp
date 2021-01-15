@@ -2,7 +2,7 @@
    
    <div :class="{ 'collapsed': collapsed }" class="message-container flex flex-col items-center">
 
-      <div class="message-container__bar flex-0 flex items-center justify-between w-full px-8">
+      <div class="message-container__bar flex-0 flex items-center justify-between w-full">
 
          <Tabs 
             :tabs="msg_tabs" 
@@ -13,7 +13,7 @@
 
       </div>
 
-      <div v-if="!messages.length" class="message-container__default flex auto flex items-center justify-center w-full p-8">
+      <div v-if="!messages.length" class="message-container__default flex auto flex items-center justify-center w-full">
 
          <div class="text-center select-none">
             {{ tabs[currentTab].default }}
@@ -21,7 +21,7 @@
 
       </div>
 
-      <div v-else class="flex-auto flex flex-col items-center w-full p-8 overflow-y-auto overflow-x-hidden">
+      <div v-else class="message-container__main flex-auto flex flex-col items-center w-full overflow-y-auto overflow-x-hidden">
 
          <MessageCard
             v-for="message in messages"
@@ -200,14 +200,22 @@
       }
 
       &__bar {
-         height: var(--navbar-util-height);
-
+         height: calc(var(--navbar-util-height) / 1.6);
+         padding: 0 var(--side-padding);
          // box-shadow: 0 5px 10px -2px rgba(0, 0, 0, .3);
       }
 
-      &__default > div {
-         color: rgba(var(--color-white-2), 1);
-         @include typography(16px, 500, var(--line-height));
+      &__default {
+         padding: var(--side-padding);
+         
+         > div {
+            color: rgba(var(--color-white-2), 1);
+            @include typography(16px, 500, var(--line-height));
+         }
+      }
+      
+      &__main {
+         padding: var(--side-padding);
       }
 
    }

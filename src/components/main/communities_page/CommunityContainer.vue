@@ -2,7 +2,7 @@
    
    <div class="community-container flex flex-col items-center">
 
-      <div class="community-container__bar flex items-center w-full px-8">
+      <div class="community-container__bar flex items-center w-full">
 
          <Tabs 
             :tabs="tabs" 
@@ -13,7 +13,7 @@
 
       </div>
       
-      <div v-if="!communities.length" class="community-container__default flex auto flex items-center justify-center w-full p-8">
+      <div v-if="!communities.length" class="community-container__default flex auto flex items-center justify-center w-full">
 
          <div class="text-center select-none">
             {{ tabs[currentTab].default }}
@@ -21,7 +21,7 @@
 
       </div>
 
-      <div v-else class="flex-auto flex flex-col items-center w-full py-8 px-6 overflow-y-auto overflow-x-hidden">
+      <div v-else class="community-container__main flex-auto flex flex-col items-center w-full overflow-y-auto overflow-x-hidden">
 
          <CommunityCard
             v-for="card in communities"
@@ -140,12 +140,21 @@
       max-height: 100%;
 
       &__bar {
-         height: var(--navbar-util-height);
+         height: calc(var(--navbar-util-height) / 1.6);
+         padding: 0 var(--side-padding);
       }
 
-      &__default > div {
-         color: rgba(var(--color-white-2), 1);
-         @include typography(16px, 500, var(--line-height));
+      &__default {
+         padding: var(--side-padding);
+         
+         > div {
+            color: rgba(var(--color-white-2), 1);
+            @include typography(16px, 500, var(--line-height));
+         }
+      }
+
+      &__main {
+         padding: var(--side-padding);
       }
 
    }

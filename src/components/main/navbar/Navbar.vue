@@ -1,36 +1,54 @@
 <template>
    
-   <div class="navbar-util flex-0 flex items-center w-full px-8">
+   <div class="navbar-util flex-0 flex items-center w-full">
 
       <div class="flex items-center justify-between w-full h-full">
 
-         <div class="navbar-util__search flex items-center h-10">
+         <transition name="fade-out">
 
-            <vs-input type="search" v-model="search" placeholder="Search" border color="#9370DB">
+            <div v-if="search_collapse" class="navbar-util__search flex items-center h-10">
 
-               <template #icon>
+               <vs-input type="search" v-model="search" placeholder="Search" border color="#9370DB">
 
-                  <font-awesome-icon :icon="['fas', 'search']" class="w-3 h-3 fill-current" />
+                  <template #icon>
 
-               </template>
+                     <font-awesome-icon :icon="['fas', 'search']" class="w-3 h-3 fill-current" />
 
-            </vs-input>
+                  </template>
 
-         </div>
+               </vs-input>
 
-         <div class="flex items-center space-x-4"> 
+            </div>
 
-            <div class="inline-block relative">
+         </transition>
 
-               <vs-button @click="setDropdown" shadow class="shadow-button">
+         <div class="flex flex-auto items-center justify-end space-x-4"> 
 
-                  <font-awesome-icon :icon="['far', 'bell']" class="w-4 h-4 fill-current text-gray-300" :class="{ 'unread': unread }" />
+            <div class="flex items-center relative">
 
-                  <span v-if="unread" class="navbar-util__unread ml-1" :class="{ 'unread': unread }">
-                     {{ unread }}
-                  </span>
+               <div class="navbar-util__search-btn">
 
-               </vs-button>
+                  <vs-button @click="setSearchInput" shadow class="shadow-button">
+
+                     <font-awesome-icon :icon="['fas', 'search']" class="w-4 h-4 fill-current text-gray-300" />
+
+                  </vs-button>
+
+               </div>
+
+               <div class="navbar-util__notif-btn ml-2">
+
+                  <vs-button @click="setDropdown" shadow class="shadow-button">
+
+                     <font-awesome-icon :icon="['far', 'bell']" class="w-4 h-4 fill-current text-gray-300" :class="{ 'unread': unread }" />
+
+                     <span v-if="unread" class="navbar-util__unread ml-1" :class="{ 'unread': unread }">
+                        {{ unread }}
+                     </span>
+
+                  </vs-button>
+
+               </div>
 
                <transition name="slide-fade">
 
@@ -69,6 +87,9 @@
    export default class Navbar extends Vue {
 
       search = '';
+      search_collapse = false;
+
+      setSearchInput() { this.search_collapse = !this.search_collapse; }
 
       src = 'https://images.unsplash.com/photo-1600062642044-b9c49d03a89f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60';
 
@@ -82,11 +103,7 @@
 
       dropdownOn = false;
 
-      setDropdown() {
-
-         this.dropdownOn = !this.dropdownOn;
-
-      }
+      setDropdown() { this.dropdownOn = !this.dropdownOn; }
 
    } 
 
@@ -97,10 +114,14 @@
    .navbar-util {
 
       height: var(--navbar-util-height);
+      padding: 8px var(--side-padding);
 
       &__search {
          width: 10rem;
-         
+
+         opacity: 1;
+         transform: translateX(0);
+
          input {
             @include typography(13px, 500, var(--line-height));
          }
@@ -114,6 +135,15 @@
          color: rgba(var(--color-white-2), .8) !important
       }
 
+   }
+
+   .fade-out-enter-active, .fade-out-leave-active {
+      @extend %base_transition;
+   }
+
+   .fade-out-enter, .fade-out-leave-to {
+      transform: translateX(30%);
+      opacity: 0;
    }
 
 </style>

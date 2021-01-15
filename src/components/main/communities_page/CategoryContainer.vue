@@ -1,10 +1,10 @@
 <template>
    
-   <div class="category-container flex flex-col px-8 pb-8">
+   <div class="category-container flex flex-col">
 
       <div class="flex-auto flex items-start relative w-4/5 h-full">
 
-         <div class="category-container__content flex flex-col items-center w-full h-full pt-4 pb-8 overflow-y-auto overflow-x-hidden">
+         <div class="category-container__main flex flex-col items-center w-full h-full pt-4 pb-8 overflow-y-auto overflow-x-hidden">
             
             <CategoryTab
                v-for="category in categories"
@@ -69,9 +69,10 @@
       width: 40%;
       height: 100%;
       max-height: 100%;
-      padding-top: var(--navbar-util-height);
+      padding: var(--side-padding);
+      padding-top: calc(var(--navbar-util-height) / 1.6);
 
-      &__content {
+      &__main {
          border-radius: 20px 0 0 20px;
          // background-color: rgba(var(--color-gray-2), 1);
          background: linear-gradient(135deg, rgba(var(--color-gray-light), 1), rgb(26, 27, 30));

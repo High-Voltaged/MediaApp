@@ -2,11 +2,11 @@
    
    <div :class="{ 'collapsed': collapsed }" class="suggested-container flex flex-col items-start relative">
 
-      <div :class="collapsed ? 'px-0' : 'px-8'" class="suggested-container__bar flex-0 flex items-center justify-between w-full space-x-2">
+      <div :class="{ 'collapsed-bar': collapsed }" class="suggested-container__bar flex-0 flex items-center justify-between w-full space-x-2">
 
          <transition name="fade">
 
-            <div v-if="!collapsed" class="suggested-container__bar-text text-sm font-medium tracking-wide text-gray-300 capitalize">
+            <div v-if="!collapsed" class="suggested-container__bar-text capitalize">
                Suggested communities
             </div>
 
@@ -15,7 +15,7 @@
 
          <div class="suggested-container__collapse-btn flex items-center">
 
-            <vs-button shadow @click="setSidebar()" class="shadow-button inline-block">
+            <vs-button shadow @click="setSidebar" class="shadow-button inline-block">
                
                <font-awesome-icon :icon="['fas', 'indent']" class="w-4 h-4 fill-current" />
 
@@ -27,7 +27,7 @@
 
       <transition name="slide-collapse">
 
-         <div v-if="!collapsed" class="suggested-container__content flex-auto flex flex-col items-center w-full p-8 overflow-y-auto overflow-x-hidden space-y-4">
+         <div v-if="!collapsed" class="suggested-container__main flex-auto flex flex-col items-center w-full overflow-y-auto overflow-x-hidden space-y-4">
 
             <CommunityCard
                v-for="card in communities"
@@ -94,7 +94,21 @@
       }
 
       &__bar {
-         height: var(--navbar-util-height);
+         height: calc(var(--navbar-util-height) / 1.6);
+         padding: 0 var(--side-padding);
+
+         &.collapsed-bar {
+            padding: 0;
+         }
+
+         &-text {
+            color: rgba(var(--color-white-2), 1);
+            @include typography(14px, 500, var(--l-height));
+         }
+      }
+
+      &__main {
+         padding: var(--side-padding);
       }
 
       &__collapse-btn {

@@ -1,6 +1,6 @@
 <template>
    
-   <div class="navbar-util__dropdown absolute right-0 -bottom-2 flex flex-col items-center px-2 py-3 oveflow-hidden">
+   <div class="navbar-util__dropdown absolute right-0 -bottom-2 flex flex-col items-center px-2 py-3 overflow-hidden">
 
       <Tabs></Tabs>
 

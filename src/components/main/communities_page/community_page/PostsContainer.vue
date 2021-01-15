@@ -78,6 +78,7 @@
             margin-top: 0.75rem;
             padding: 30px 24px;
 
+            border-radius: 0 0 20px 20px;
             background-color: #24262A; // ----
             box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
          }
