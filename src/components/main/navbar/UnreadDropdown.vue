@@ -85,6 +85,7 @@
 <style lang="scss" scoped>
 
    .navbar-util__dropdown {
+     
       width: var(--dropdown-width);
       min-height: var(--dropdown-height);
       
@@ -104,6 +105,18 @@
          color: rgba(var(--color-white-2), 1);
          @include typography(16px, 500, var(--line-height));
       }
+  
+   }
+
+   // make the following accessed globally
+
+   .slide-fade-enter-active, .slide-fade-leave-active {
+      transition: all .3s ease;
+   }
+
+   .slide-fade-enter, .slide-fade-leave-to {
+      transform: translateY(95%);
+      opacity: 0;
    }
 
 </style>

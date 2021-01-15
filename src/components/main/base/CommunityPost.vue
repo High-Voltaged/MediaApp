@@ -22,14 +22,10 @@
 
             <span class="inline-block"> Posted by </span>
 
-            <font-awesome-icon :icon="['fas', 'user']" class="w-3 h-3 fill-current text-white" style="color: rgba(255, 255, 255, .75)" />
+            <font-awesome-icon :icon="['fas', 'user']" class="w-3 h-3 fill-current" style="color: rgba(255, 255, 255, .75)" />
 
             <span class="inline-block">
-               {{ post.author }}
-            </span>
-
-            <span class="inline-block">
-               {{ post.timestamp }} ago
+               {{ post.author }} {{ post.timestamp }} ago
             </span>
 
          </div>
