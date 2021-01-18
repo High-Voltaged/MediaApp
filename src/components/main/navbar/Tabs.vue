@@ -1,13 +1,13 @@
 <template>
    
-   <div class="unread-tabs flex items-center justify-center w-full p-1 space-x-1">
+   <div class="notif-tabs flex items-center justify-center w-full p-1 space-x-1">
 
       <button
          v-for="tab in tabs"
          :key="tab.id"
          @click="setTab(tab.id)"
          :class="{ 'selected': checkTab(tab.id) }"
-         class="unread-tab relative px-2 py-1"
+         class="notif-tab relative px-2 py-1"
       >
 
          <span>
@@ -75,7 +75,7 @@
 
 <style lang="scss" scoped>
 
-   .unread-tab {
+   .notif-tab {
       
       > span {
          color: rgba(var(--color-white-2), .8);

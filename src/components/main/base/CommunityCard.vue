@@ -65,7 +65,7 @@
          <vs-button size="small" gradient :color="isCmnParent ? '#9370DB' : '#1c1e21'">
 
             <span v-if="isCmnParent" class="capitalize">
-               Join
+               Joined
             </span>
 
             <span v-else>

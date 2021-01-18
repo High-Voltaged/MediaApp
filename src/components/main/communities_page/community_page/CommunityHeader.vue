@@ -59,7 +59,7 @@
                   <font-awesome-icon :icon="['fas', 'users']" class="w-4 h-4 fill-current text-white" />
                   
                   <span class="ml-2 font-semibold"> 
-                     Follow 
+                     Following
                   </span>
                
                </vs-button>

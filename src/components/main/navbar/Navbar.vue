@@ -38,7 +38,7 @@
 
                <div class="navbar-util__notif-btn ml-2">
 
-                  <vs-button @click="setDropdown" shadow class="shadow-button">
+                  <vs-button @click="setNotifDropdown" shadow class="shadow-button">
 
                      <font-awesome-icon :icon="['far', 'bell']" class="w-4 h-4 fill-current text-gray-300" :class="{ 'unread': unread }" />
 
@@ -52,17 +52,29 @@
 
                <transition name="slide-fade">
 
-                  <UnreadDropdown
-                     v-if="dropdownOn"
-                  ></UnreadDropdown>
+                  <NotifDropdown
+                     v-if="notifDropdownOn"
+                  ></NotifDropdown>
 
                </transition>
 
             </div>
 
-            <vs-avatar size="35" color="#9370DB" pointer badge badge-color="danger">
-               <img :src="src" />
-            </vs-avatar>
+            <div class="navbar-util__avatar block relative">
+
+               <vs-avatar @click="setUtilDropdown" size="35" color="#9370DB" pointer badge badge-color="danger">
+                  <img :src="src" />
+               </vs-avatar>
+
+               <transition name="slide-fade">
+
+                  <UtilDropdown
+                     v-if="utilDropdownOn"
+                  ></UtilDropdown>
+
+               </transition>
+
+            </div>
 
          </div>
 
@@ -74,24 +86,27 @@
 
 <script lang="ts">
 
-   import { Component, Prop, Vue, InjectReactive } from "nuxt-property-decorator";
-   import UnreadDropdown from './UnreadDropdown.vue';
+   import { Component, Prop, Vue } from "nuxt-property-decorator";
+   import NotifDropdown from './NotifDropdown.vue';
+   import UtilDropdown from './UtilDropdown.vue';
    import { vxm } from '../../../store'; 
    
    @Component({
       name: 'Navbar',
       components: {
-         UnreadDropdown,
+         NotifDropdown,
+         UtilDropdown,
       }
    })
-   export default class Navbar extends Vue {
 
+   export default class Navbar extends Vue {
+      
+      src = 'https://images.unsplash.com/photo-1600062642044-b9c49d03a89f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60';
       search = '';
+
       search_collapse = false;
 
       setSearchInput() { this.search_collapse = !this.search_collapse; }
-
-      src = 'https://images.unsplash.com/photo-1600062642044-b9c49d03a89f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60';
 
       get unread() {
 
@@ -99,11 +114,15 @@
 
       }
 
-      // Dropdown
+      // Dropdowns
 
-      dropdownOn = false;
+      notifDropdownOn = false;
 
-      setDropdown() { this.dropdownOn = !this.dropdownOn; }
+      setNotifDropdown() { this.notifDropdownOn = !this.notifDropdownOn; }
+
+      utilDropdownOn = false;
+
+      setUtilDropdown() { this.utilDropdownOn = !this.utilDropdownOn; }
 
    } 
 
@@ -115,6 +134,10 @@
 
       height: var(--navbar-util-height);
       padding: 8px var(--side-padding);
+      // background-color: rgba(var(--color-gray-dark), 1);
+      // border-bottom: 1px solid rgba(var(--color-white-2), .1);
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .4);
+      z-index: 100;
 
       &__search {
          width: 10rem;

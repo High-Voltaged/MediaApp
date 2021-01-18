@@ -120,7 +120,8 @@
       width: var(--sidebar-width);
       height: 100%;
 
-      border-right: 1px solid rgba(var(--color-white-2), .1);
+      background-color: rgba(var(--color-gray-dark), 1);
+      // border-right: 1px solid rgba(var(--color-white-2), .1);
 
       .sidebar-logo {
          height: var(--navbar-util-height);
