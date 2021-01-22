@@ -71,22 +71,19 @@
       @Prop() private message;
 
       get getSpacing() {
-         
-         let num;
 
          if(this.message.msg_num) {
 
             if(this.message.msg_num <= 3) {
-               num = (2 * this.message.msg_num - 2);
+               return (2 * this.message.msg_num - 2);
             } else {
-               num = 4;
+               return 4;
             }
 
          } else {
-            num = 0;
+            return 0;
          }
 
-         return num;
       }
 
       get getMessageNum() {

@@ -109,7 +109,7 @@
 
       opacity: 1;
       transform: translateY(100%);
-      background-color: rgba(var(--color-gray-2), 1);
+      background-color: rgba(var(--color-gray-4), 1);
       border-radius: 20px 5px 20px 20px;
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);
 

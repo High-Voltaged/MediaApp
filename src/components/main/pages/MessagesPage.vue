@@ -1,6 +1,6 @@
 <template>
    
-   <div class="page__messages sub flex-auto flex items-start justify-between w-full overflow-y-auto overflow-x-hidden">
+   <div class="page__messages sub flex-auto flex items-start justify-between w-full mt-2 overflow-y-auto overflow-x-hidden">
 
       <MessageContainer />
 

@@ -10,6 +10,25 @@
 }
 
 
+// RESPONSIVE DESIGN
+
+$screens: 500px, 768px, 1024px, 1280px, 1536px;
+
+@mixin responsive($prop, $value, $index, $max: 0) {
+   @if $max == 0 {
+      @media screen and (min-width: nth($screens, $index)) {
+         #{$prop}: $value;
+      }
+   }
+
+   @else {
+      @media screen and (min-width: nth($screens, $index)) and (max-width: nth($screens, $index + $max)) {
+         #{$prop}: $value;
+      }
+   }
+}
+
+
 // OTHER
 
 @mixin background-card($index, $side, $opacity) {

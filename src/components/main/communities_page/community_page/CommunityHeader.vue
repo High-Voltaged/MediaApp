@@ -130,7 +130,9 @@
          box-shadow: 0 4px 6px 0 rgba(0, 0, 0, .3);
 
          &__info {
-            max-width: 25rem;
+            max-width: 17rem;
+            @include responsive('max-width', 25rem, 4);
+
             margin-left: 42px;
 
             .title {

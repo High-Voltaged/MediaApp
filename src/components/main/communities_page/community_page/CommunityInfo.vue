@@ -98,7 +98,10 @@
 
       .info-content {
          width: 17.5rem;
+         @include responsive('width', 15rem, 3, 1);
+
          max-height: 18.125rem;
+         
          padding: 20px;
 
          border-radius: 20px 0 0 20px;

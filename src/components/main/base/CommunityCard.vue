@@ -62,7 +62,13 @@
 
       <div :class="{ 'reduced': !isCmnParent }" class="community-card__join flex-0 inline-block">
 
-         <vs-button size="small" gradient :color="isCmnParent ? '#9370DB' : '#1c1e21'">
+         <vs-button 
+            size="small" 
+            :icon="!isCmnParent"
+            :gradient="isCmnParent"
+            :flat="!isCmnParent"
+            :color="isCmnParent ? '#9370DB' : '#FFFFFF'" 
+         >
 
             <span v-if="isCmnParent" class="capitalize">
                Joined

@@ -13,15 +13,17 @@
          </transition>
 
 
-         <div class="suggested-container__collapse-btn flex items-center">
+         <!-- <div class="suggested-container__collapse-btn flex items-center">
 
-            <vs-button shadow @click="setSidebar" class="shadow-button inline-block">
+            <vs-button icon shadow @click="setSidebar" class="shadow-button inline-block">
                
                <font-awesome-icon :icon="['fas', 'indent']" class="w-4 h-4 fill-current" />
 
             </vs-button>
 
-         </div>
+            -- work on the transitioning
+
+         </div> -->
 
       </div>
 

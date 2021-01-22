@@ -7,11 +7,11 @@ module.exports = {
    theme: {
    
       screens: {
-         'sm': '450px',
-         'md': '650px',
-         'lg': '950px',
-         'xl': '1200px',
-         '2xl': '1800px',
+         'sm': '500px',
+         'md': '768px',
+         'lg': '1024px',
+         'xl': '1280px',
+         '2xl': '1536px',
       },
 
       boxShadow: {

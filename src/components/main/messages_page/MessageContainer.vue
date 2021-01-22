@@ -46,7 +46,7 @@
 
 <script lang="ts">
 
-   import { Component, Prop, Vue, Watch, ProvideReactive } from "nuxt-property-decorator";
+   import { Component, Prop, Vue } from "nuxt-property-decorator";
    import MessageCard from '../base/MessageCard.vue';
    import Tabs from '../base/Tabs.vue';
    import BackgroundCard from '../../other/BackgroundCard.vue';
@@ -78,12 +78,6 @@
                })
 
             };
-
-            case 2: 
-               return 0;
-
-            case 3: 
-               return 0;
 
             default: 
                return 0; // --- add default here
@@ -131,13 +125,6 @@
 
       }
 
-      // // community tabs
-      // get cmn_tabs() {
-
-      //    return this.tabs.slice(2);
-
-      // }
-
       get currentTab() {
 
          return vxm.messages.currentMsgTab.id;
@@ -149,22 +136,6 @@
          vxm.messages.setMsgTab(id);
 
       }
-
-      // isMsgTab(tabType: string): boolean {
-
-      //    let tab = this[`${tabType}_tabs`].find(tab => {
-
-      //       return (tab.id == this.currentTab);
-
-      //    });
-
-      //    if(tab != undefined) {
-      //       return true;
-      //    } else {
-      //       return false;
-      //    }
-
-      // }
 
    // Sidebar Collapse 
 

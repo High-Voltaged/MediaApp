@@ -6,15 +6,15 @@
 
          <transition name="fade-out">
 
-            <div v-if="search_collapse" class="navbar-util__search flex items-center h-10">
+            <div class="navbar-util__search flex items-center h-10">
 
-               <vs-input type="search" v-model="search" placeholder="Search" border color="#9370DB">
+               <vs-input type="search" v-model="search" placeholder="Search" autocomplete="off">
 
-                  <template #icon>
+                  <!-- <template #icon>
 
                      <font-awesome-icon :icon="['fas', 'search']" class="w-3 h-3 fill-current" />
 
-                  </template>
+                  </template> -->
 
                </vs-input>
 
@@ -25,16 +25,6 @@
          <div class="flex flex-auto items-center justify-end space-x-4"> 
 
             <div class="flex items-center relative">
-
-               <div class="navbar-util__search-btn">
-
-                  <vs-button @click="setSearchInput" shadow class="shadow-button">
-
-                     <font-awesome-icon :icon="['fas', 'search']" class="w-4 h-4 fill-current text-gray-300" />
-
-                  </vs-button>
-
-               </div>
 
                <div class="navbar-util__notif-btn ml-2">
 
@@ -140,24 +130,21 @@
       z-index: 100;
 
       &__search {
-         width: 10rem;
+         width: 20rem;
 
          opacity: 1;
          transform: translateX(0);
-
-         input {
-            @include typography(13px, 500, var(--line-height));
+         @include typography(14px, 500, var(--line-height));
+         
+         .vs-input__icon > svg {
+            color: rgba(var(--color-white-1), 1) !important
          }
       }
 
       .unread {
          color: rgba(var(--color-purple-1), 1);
       }
-
-      .vs-input__icon > svg {
-         color: rgba(var(--color-white-2), .8) !important
-      }
-
+      
    }
 
    .fade-out-enter-active, .fade-out-leave-active {

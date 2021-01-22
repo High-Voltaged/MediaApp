@@ -18,7 +18,7 @@
 
          <div class="sidebar-section flex flex-col items-start w-full">
 
-            <span class="sidebar-section__text inline-block tracking-wider uppercase">
+            <span class="sidebar-section__text inline-block uppercase">
                Profile
             </span>
 
@@ -34,7 +34,7 @@
 
          <div class="sidebar-section flex flex-col items-start w-full">
 
-            <span class="sidebar-section__text inline-block tracking-wider uppercase">
+            <span class="sidebar-section__text inline-block uppercase">
                Global
             </span>
 
@@ -134,8 +134,9 @@
 
 
       .sidebar-section__text {
-         color: rgba(var(--color-white-2), 1);
-         @include typography(12px, 600, var(--line-height));
+         letter-spacing: 3px;
+         color: rgba(var(--color-white-2), .5);
+         @include typography(10px, 600, var(--line-height));
       }
 
    }

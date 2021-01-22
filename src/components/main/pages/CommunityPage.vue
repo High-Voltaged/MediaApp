@@ -4,7 +4,7 @@
 
       <CommunityHeader></CommunityHeader>
          
-      <div class="page__community__main flex-auto flex items-start justify-between 2xl:justify-center w-full">
+      <div class="page__community__main flex-auto flex items-start justify-center w-full">
          
          <PostsContainer></PostsContainer>
 

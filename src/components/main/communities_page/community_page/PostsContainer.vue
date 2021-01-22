@@ -1,6 +1,6 @@
 <template>
    
-   <div class="page__community__posts h-full">
+   <div class="page__community__posts flex-auto h-full">
 
       <div class="posts-content flex flex-col w-full h-full">
 
@@ -56,8 +56,10 @@
 <style lang="scss" scoped>
 
    .page__community__posts {
-      width: 600px;
+      max-width: 62.5rem;
       margin-right: 70px;
+
+      @include responsive('max-width', 75rem, 5);
 
       .posts-content {
          &__header {

@@ -1,6 +1,6 @@
 <template>
    
-   <div class="page__communities sub flex-auto flex items-start w-full overflow-y-auto overflow-x-hidden">
+   <div class="page__communities sub flex-auto flex items-start w-full mt-2 overflow-y-auto overflow-x-hidden">
 
       <CommunityContainer></CommunityContainer>
 

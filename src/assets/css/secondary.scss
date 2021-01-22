@@ -5,13 +5,11 @@
 
 // BUTTON STYLING -- OVERRIDING
 
-// note : use 'icon' attribute for icon btns
-
 .shadow-button {
    background-color: rgba(var(--color-gray-1), 1) !important;
    color: white !important;
 
-   &:focus, &:hover, &:active {
+   &:hover {
       box-shadow: 0 8px 25px 0 rgba(0, 0, 0, .75) !important;
    }
 }
@@ -28,29 +26,9 @@
    width: 100% !important;
 }
 
-.vs-input {
-
-   &__icon {
-      width: 30px !important;
-      height: 30px !important;
-
-      box-shadow: 12px 0 10px -10px rgba(0, 0, 0, .75) !important;
-   }
-
-   &--has-icon ~ .vs-input__label {
-      left: 34px !important;
-   }
-
-   &--has-icon {
-      padding-left: 34px !important;
-   }
-
-   
-}
-
-.vs-input-parent--border .vs-input-content .vs-input__affects__1 {
-   border-bottom-color: rgba(var(--color-white-2), .8) !important;
-}
+// .vs-input-parent--border .vs-input-content .vs-input__affects__1 {
+//    border-bottom-color: rgba(var(--color-white-2), .8) !important;
+// }
 
 input {
 
@@ -70,25 +48,13 @@ input, textarea  {
    white-space: pre-wrap !important;
    overflow-wrap: break-words !important;
 
-   color: rgba(var(--color-white-2), .5) !important;
+   color: rgba(var(--color-white-1), .5) !important;
    &:focus, &:active {
       color: rgba(var(--color-white-1), 1) !important;
    }
 }
 
-// CARD & AVATAR STYLING -- OVERRIDING
-
-
-.vs-card {
-   background: rgba(var(--color-gray-3), 1) !important;
-   box-shadow: var(--avatar-shadow) !important; 
-
-   max-width: none !important;
-
-   .vs-card__text {
-      width: 100%;
-   }
-}
+// AVATAR STYLING -- OVERRIDING
 
 
 .vs-avatar {
