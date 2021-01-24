@@ -6,7 +6,7 @@
 
          <transition name="fade">
 
-            <div v-if="!collapsed" class="suggested-container__bar-text capitalize">
+            <div v-if="!collapsed" class="suggested-container__bar-text capitalize select-none">
                Suggested communities
             </div>
 
@@ -97,7 +97,7 @@
 
       &__bar {
          height: calc(var(--navbar-util-height) / 1.6);
-         padding: 0 var(--side-padding);
+         padding: 0 calc(var(--side-padding) / 1.5) 0;
 
          &.collapsed-bar {
             padding: 0;
@@ -110,7 +110,7 @@
       }
 
       &__main {
-         padding: var(--side-padding);
+         padding: var(--side-padding) calc(var(--side-padding) / 1.5);
       }
 
       &__collapse-btn {

@@ -57,7 +57,7 @@
 
    .page__community__posts {
       max-width: 62.5rem;
-      margin-right: 70px;
+      margin-right: var(--container-spacing);
 
       @include responsive('max-width', 75rem, 5);
 

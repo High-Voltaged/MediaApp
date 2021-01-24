@@ -67,12 +67,12 @@
    .sidebar-util .sidebar-tab {
       
       &__text {
-         color: rgba(var(--color-white-2), .8);
+         color: rgba(var(--color-white-2), 1);
          @include typography(14px, 500, var(--line-height));
       }
       
       &__icon {
-         color: rgba(var(--color-white-2), .8);
+         color: rgba(var(--color-white-2), 1);
       }
 
       &__selected {

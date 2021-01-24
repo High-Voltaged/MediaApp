@@ -173,11 +173,13 @@
       &__bar {
          height: calc(var(--navbar-util-height) / 1.6);
          padding: 0 var(--side-padding);
+         padding-right: calc(var(--side-padding) / 1.5);
          // box-shadow: 0 5px 10px -2px rgba(0, 0, 0, .3);
       }
 
       &__default {
          padding: var(--side-padding);
+         padding-right: calc(var(--side-padding) / 1.5);
          
          > div {
             color: rgba(var(--color-white-2), 1);
@@ -187,6 +189,7 @@
       
       &__main {
          padding: var(--side-padding);
+         padding-right: calc(var(--side-padding) / 1.5);
       }
 
    }

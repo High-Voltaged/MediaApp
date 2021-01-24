@@ -3,7 +3,7 @@
    <button 
       @click="$emit('click', category.id)"
       :class="{ 'selected': checkCurrent(category.id) }" 
-      class="category-tab flex items-center relative w-full my-2 py-2 px-8">
+      class="category-tab flex items-center relative w-full py-2 px-8">
 
       <div 
          class="category-tab__icon inline-block"

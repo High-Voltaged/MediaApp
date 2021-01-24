@@ -2,10 +2,14 @@
    
    <div class="category-container flex flex-col">
 
-      <div class="flex-auto flex items-start relative w-4/5 h-full">
+      <div class="flex flex-col items-start relative w-full h-full space-y-4">
 
-         <div class="category-container__main flex flex-col items-center w-full h-full pt-4 pb-8 overflow-y-auto overflow-x-hidden">
-            
+         <div class="category-container__title flex-0 capitalize select-none">
+            Community categories
+         </div>
+
+         <div class="category-container__main flex flex-col items-start w-auto py-4 space-y-4">
+
             <CategoryTab
                v-for="category in categories"
                :key="category.id"
@@ -13,7 +17,8 @@
                @click="setCategory($event)"
             ></CategoryTab>      
 
-            <div class="category-container__badge absolute -right-10 top-20">
+
+            <!-- <div class="category-container__badge absolute -right-10 top-20">
 
                <vs-button size="small" color="#9370DB">
 
@@ -23,7 +28,7 @@
 
                </vs-button>
 
-            </div>
+            </div> -->
 
          </div>
 
@@ -66,17 +71,25 @@
 <style lang="scss" scoped>
 
    .category-container {
-      width: 40%;
+      width: var(--secondary-util-width);
       height: 100%;
       max-height: 100%;
-      padding: var(--side-padding);
+      padding: var(--side-padding) calc(var(--side-padding) / 1.5);
       padding-top: calc(var(--navbar-util-height) / 1.6);
 
       &__main {
-         border-radius: 20px 0 0 20px;
+         min-width: 16rem;
+         
+         border-radius: 20px;
          // background-color: rgba(var(--color-gray-2), 1);
          background: linear-gradient(135deg, rgba(var(--color-gray-light), 1), rgb(26, 27, 30));
          box-shadow: 0 0 18px 0px rgba(0, 0, 0, .3);
+      }
+
+      &__title {
+         color: rgba(var(--color-white-1), 1);
+         @include typography(16px, 500, var(--l-height-sm));
+         text-shadow: var(--subheading-shadow);
       }
 
       &__badge {
