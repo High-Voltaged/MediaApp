@@ -107,6 +107,7 @@
    .util-dropdown {
       min-height: 8rem;
 
+      z-index: 150;
       opacity: 1;
       transform: translateY(100%);
       background-color: rgba(var(--color-gray-4), 1);

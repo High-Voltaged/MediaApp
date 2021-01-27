@@ -40,7 +40,7 @@
 
       </div>
 
-      <div class="posts-content__post__secondary flex items-center">
+      <div class="posts-content__post__secondary flex items-center w-full">
 
          <div class="post__comments flex items-center">
 
@@ -110,12 +110,14 @@
 <style lang="scss" scoped>
 
    .page__community__posts .posts-content__post {
+      box-shadow: 0 0 6px 0 rgba(0, 0, 0, .7);
+      border-radius: 20px;
+
       &__main {
          padding: 12px 30px;
          
-         border-radius: 20px 20px 5px 5px;
+         border-radius: 20px 20px 0 0;
          background-color: rgba(var(--color-gray-3), 1);
-         box-shadow: 0 0 6px rgba(0, 0, 0, .7);
 
          .post__rate {
             left: -12px;
@@ -147,13 +149,10 @@
       }
 
       &__secondary {
-         padding: 5px 22px;
-         margin-left: .5rem;
-         margin-right: .5rem;
+         padding: 5px 30px;
 
          border-radius: 0 0 20px 20px;
          background-color: rgba(var(--color-featured), 1);
-         box-shadow: 0 0 6px rgba(0, 0, 0, .7);
 
          .post__comments span {
             @include typography(12px, 500, var(--l-height));

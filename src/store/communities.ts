@@ -21,7 +21,7 @@ export default class Communities extends VuexModule {
             name: 'Big Science',
             category: 'science',
             followers: 3000000000,
-            description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+            description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.',
 
             suggested: true,
             managed: true,
@@ -33,7 +33,7 @@ export default class Communities extends VuexModule {
             name: 'Statistics',
             category: 'math',
             followers: 32973,
-            description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+            description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.',
 
             suggested: false,
             managed: false,
@@ -46,7 +46,7 @@ export default class Communities extends VuexModule {
             name: 'World Nature',
             category: 'nature',
             followers: 29801,
-            description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+            description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.',
 
             suggested: false,
             managed: false,
@@ -58,7 +58,7 @@ export default class Communities extends VuexModule {
             name: 'Sports Group',
             category: 'sports',
             followers: 2902899,
-            description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+            description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.',
 
             suggested: true,
             managed: true,
@@ -70,7 +70,7 @@ export default class Communities extends VuexModule {
             name: 'Athletes',
             category: 'sports',
             followers: 287157398,
-            description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+            description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.',
 
             suggested: true,
             managed: true,
@@ -82,7 +82,7 @@ export default class Communities extends VuexModule {
             name: 'World Nature',
             category: 'nature',
             followers: 20910919,
-            description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+            description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.',
             
             suggested: false,
             managed: false,
@@ -94,7 +94,7 @@ export default class Communities extends VuexModule {
             name: 'Big Science',
             category: 'science',
             followers: 30920,
-            description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+            description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.',
 
             suggested: true,
             managed: false,
@@ -106,7 +106,7 @@ export default class Communities extends VuexModule {
             name: 'Statistics',
             category: 'math',
             followers: 4092,
-            description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+            description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.',
             
             suggested: true,
             managed: true,

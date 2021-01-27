@@ -45,7 +45,7 @@
                   <NotifDropdown
                      v-if="notifDropdownOn"
                   ></NotifDropdown>
-
+                     
                </transition>
 
             </div>
@@ -69,6 +69,8 @@
          </div>
 
       </div>
+
+      <!-- <div class="absolute inset-0 bg-none pointer-events-none z-50"></div> -->
 
    </div>
 

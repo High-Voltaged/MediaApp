@@ -17,19 +17,6 @@
                @click="setCategory($event)"
             ></CategoryTab>      
 
-
-            <!-- <div class="category-container__badge absolute -right-10 top-20">
-
-               <vs-button size="small" color="#9370DB">
-
-                  <span class="capitalize">
-                     Categories
-                  </span>
-
-               </vs-button>
-
-            </div> -->
-
          </div>
 
       </div>
@@ -81,7 +68,6 @@
          min-width: 16rem;
          
          border-radius: 20px;
-         // background-color: rgba(var(--color-gray-2), 1);
          background: linear-gradient(135deg, rgba(var(--color-gray-light), 1), rgb(26, 27, 30));
          box-shadow: 0 0 18px 0px rgba(0, 0, 0, .3);
       }
@@ -90,12 +76,6 @@
          color: rgba(var(--color-white-1), 1);
          @include typography(16px, 500, var(--l-height-sm));
          text-shadow: var(--subheading-shadow);
-      }
-
-      &__badge {
-         transform: rotate(270deg);
-
-         z-index: 20;
       }
    }
 

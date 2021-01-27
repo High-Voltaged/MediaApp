@@ -40,17 +40,13 @@
 
                   <div class="notif-card__username flex items-center">
 
-                     <span class="select-none">
-                        {{ card.user.username }}
-                     </span>
+                     <span class="select-none"> {{ card.user.username }} </span>
 
                   </div>
 
                   <div class="notif-card__timestamp flex items-center">
 
-                     <span>
-                        {{ card.timestamp }}
-                     </span>
+                     <span> {{ card.timestamp }} </span>
 
                   </div>
 
@@ -58,9 +54,7 @@
 
                <div class="notif-card__text">
 
-                  <span>
-                     {{ card.content }}
-                  </span>
+                  <span> {{ card.content }} </span>
 
                </div>
 

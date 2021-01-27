@@ -59,7 +59,9 @@
       max-width: 62.5rem;
       margin-right: var(--container-spacing);
 
-      @include responsive('max-width', 75rem, 5);
+      @media #{$media-2xl} {
+         max-width: 75rem;
+      }
 
       .posts-content {
          &__header {

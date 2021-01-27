@@ -28,7 +28,7 @@
 
 <script lang="ts">
 
-   import { Component, Prop, Vue, InjectReactive } from "nuxt-property-decorator";
+   import { Component, Vue } from "nuxt-property-decorator";
    import Tabs from './Tabs.vue';
    import NotifCard from './NotifCard.vue';
    import { vxm } from '../../../store'; 
@@ -89,6 +89,7 @@
       width: var(--dropdown-width);
       min-height: var(--dropdown-height);
       
+      z-index: 150;
       opacity: 1;
       transform: translateY(100%);
       background-color: rgba(var(--color-gray-4), 1);

@@ -26,14 +26,6 @@
    })
    export default class index extends Vue {
 
-      // created() {
-
-      //    vxm.root.setTab(2);
-      //    this.$router.push({ name: 'messages' });
-      //    console.log('created');
-
-      // }
-
    } 
 
 </script>
