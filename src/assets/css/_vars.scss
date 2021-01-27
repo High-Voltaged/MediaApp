@@ -1,5 +1,11 @@
 // BASE COLORS
 
+// $color-gray-1: rgb(28, 30, 33);
+// $color-gray-2: rgb(47, 49, 54); // tertiary 
+// $color-gray-3: rgb(30, 32, 35); // contrast
+// $color-gray-4: rgb(35, 37, 41);
+// $color-featured: rgb(50, 53, 59);
+
 :root {
 
    --color-white-1: 255, 255, 255; 
@@ -17,6 +23,22 @@
    --color-purple-1: 147, 112, 219; // purple-primary #9370DB
    
 }
+
+// RESPONSIVE DESIGN
+
+
+   $screen-sm: 500px;
+   $screen-md: 768px;
+   $screen-lg: 1024px;
+   $screen-xl: 1280px;
+   $screen-2xl: 1536px;
+
+   $media-sm: (min-width: #{$screen-sm});
+   $media-md: (min-width: #{$screen-md});
+   $media-lg: (min-width: #{$screen-lg});
+   $media-xl: (min-width: #{$screen-xl});
+   $media-2xl: (min-width: #{$screen-2xl});
+
 
 
 // BASE SIZES
